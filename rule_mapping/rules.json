@@ -1,0 +1,131 @@
+{
+  "Bypassing Safety Controls": [
+    "bypass",
+    "bypassing",
+    "override",
+    "overriding",
+    "disable safety",
+    "disabled safety",
+    "safety control",
+    "interlock",
+    "alarm",
+    "safety system"
+  ],
+
+  "Confined Space": [
+    "confined space",
+    "confined area",
+    "tank",
+    "vessel",
+    "manhole",
+    "oxygen",
+    "gas testing",
+    "gas test",
+    "entry permit",
+    "h2s",
+    "toxic gas",
+    "trench",
+    "excavation"
+  ],
+
+  "Driving": [
+    "driving",
+    "driver",
+    "vehicle",
+    "car",
+    "truck",
+    "seat belt",
+    "seatbelt",
+    "speeding",
+    "speed limit",
+    "mobile phone",
+    "phone while driving"
+  ],
+
+  "Energy Isolation": [
+    "isolate",
+    "isolation",
+    "isolated",
+    "hazardous energy",
+    "energy isolation",
+    "lockout",
+    "lockout tagout",
+    "loto",
+    "zero energy",
+    "electrical isolation",
+    "power supply",
+    "blind",
+    "spading",
+    "bleed",
+    "depressurize"
+  ],
+
+  "Hot Work": [
+    "hot work",
+    "welding",
+    "weld",
+    "cutting",
+    "grinding",
+    "spark",
+    "flame",
+    "ignition",
+    "flammable",
+    "flammable material"
+  ],
+
+  "Line of Fire": [
+    "line of fire",
+    "moving object",
+    "moving equipment",
+    "vehicle",
+    "pressure release",
+    "dropped object",
+    "falling object",
+    "pinch point",
+    "struck by",
+    "exclusion zone",
+    "unsafe position"
+  ],
+
+  "Safe Mechanical Lifting": [
+    "lifting",
+    "lifting operation",
+    "crane",
+    "hoist",
+    "rigging",
+    "rigging operation",
+    "suspended load",
+    "lifting equipment",
+    "lift plan",
+    "mechanical lifting"
+  ],
+
+  "Work Authorisation": [
+    "work authorisation",
+    "work authorization",
+    "permit",
+    "work permit",
+    "permit to work",
+    "ptw",
+    "authorization",
+    "authorisation",
+    "permit required",
+    "jsa",
+    "jha",
+    "tbt"
+  ],
+
+  "Work at Height": [
+    "work at height",
+    "working at height",
+    "height",
+    "ladder",
+    "scaffold",
+    "scaffolding",
+    "fall",
+    "fall protection",
+    "harness",
+    "safety harness",
+    "elevated work"
+  ]
+}
