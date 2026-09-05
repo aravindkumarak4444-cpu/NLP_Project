@@ -1,0 +1,35 @@
+{
+    "api_name": "SIF Precursor Pattern Analysis API",
+    "version": "1.0",
+    "description": "API handoff structure between pattern analysis and the backend",
+    "database": {
+        "type": "SQLite",
+        "file": "data/sif_precursor.db",
+        "table": "pattern_analysis"
+    },
+    "request": {
+        "method": "POST",
+        "endpoint": "/api/analyse",
+        "content_type": "application/json",
+        "body": {
+            "report_id": "REPORT-001",
+            "report_text": "Worker was working at height in the plant without fall protection."
+        }
+    },
+    "response": {
+        "status": "success",
+        "analysis_id": 1,
+        "report_id": "REPORT-001",
+        "sif_potential": true,
+        "confidence": 0.75,
+        "activity": "Working at Height",
+        "location": "Plant",
+        "barrier_failure": "Fall Protection Failure",
+        "precursor_patterns": [
+            "Activity: Working at Height",
+            "Barrier Failure: Fall Protection Failure",
+            "Location: Plant"
+        ],
+        "created_at": "2026-09-05T12:00:00"
+    }
+}
