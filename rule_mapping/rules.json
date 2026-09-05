@@ -21,7 +21,11 @@
     "oxygen",
     "gas testing",
     "gas test",
-    "entry permit"
+    "entry permit",
+    "h2s",
+    "toxic gas",
+    "trench",
+    "excavation"
   ],
 
   "Driving": [
@@ -49,7 +53,11 @@
     "loto",
     "zero energy",
     "electrical isolation",
-    "power supply"
+    "power supply",
+    "blind",
+    "spading",
+    "bleed",
+    "depressurize"
   ],
 
   "Hot Work": [
@@ -101,7 +109,10 @@
     "ptw",
     "authorization",
     "authorisation",
-    "permit required"
+    "permit required",
+    "jsa",
+    "jha",
+    "tbt"
   ],
 
   "Work at Height": [
