@@ -35,7 +35,7 @@ async def test_login_user(async_client: AsyncClient):
     }
     await async_client.post("/api/v1/auth/register", json=payload)
 
-    # Login
+    # Login via email
     login_payload = {
         "email": "sam@oil.in",
         "password": "officerpassword123"
@@ -45,6 +45,16 @@ async def test_login_user(async_client: AsyncClient):
     data = res.json()
     assert "access_token" in data
     assert data["token_type"] == "bearer"
+
+    # Login via username
+    username_login_payload = {
+        "email": "safety_officer_sam",
+        "password": "officerpassword123"
+    }
+    res_user = await async_client.post("/api/v1/auth/login", json=username_login_payload)
+    assert res_user.status_code == 200
+    data_user = res_user.json()
+    assert "access_token" in data_user
 
 
 @pytest.mark.asyncio

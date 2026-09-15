@@ -1,3 +1,4 @@
+from typing import List
 from fastapi import APIRouter, Depends, status
 from app.schemas.auth import Token, LoginRequest
 from app.schemas.user import UserCreate, UserResponse
@@ -34,3 +35,14 @@ async def login(
 @router.get("/me", response_model=UserResponse, summary="Get Current User Profile")
 async def me(current_user: UserModel = Depends(get_current_user)):
     return UserResponse(**current_user.model_dump())
+
+
+@router.get("/users", response_model=List[UserResponse], summary="List All Registered Users")
+async def list_users(
+    current_user: UserModel = Depends(get_current_user),
+    db=Depends(get_database)
+):
+    repo = UserRepository(db)
+    users = await repo.find_all_users()
+    return [UserResponse(**u.model_dump()) for u in users]
+

@@ -25,11 +25,67 @@ logging.basicConfig(
 logger = logging.getLogger("sif_backend")
 
 
+async def seed_initial_users():
+    try:
+        from app.database.connection import db_manager
+        if db_manager.db is None:
+            return
+        from app.database.repositories.user_repository import UserRepository
+        from app.services.auth_service import AuthService
+        from app.schemas.user import UserCreate
+        from app.models.user import UserRole
+        from app.auth.password import hash_password, verify_password
+
+        repo = UserRepository(db_manager.db)
+        auth_service = AuthService(repo)
+
+        test_user = await repo.find_by_email("test@example.com")
+        if not test_user:
+            try:
+                await auth_service.register_user(UserCreate(
+                    username="testuser",
+                    email="test@example.com",
+                    password="Test@12345",
+                    full_name="Test User",
+                    role=UserRole.SAFETY_OFFICER,
+                    department="HSE Department"
+                ))
+                logger.info("Seeded default test user account: testuser (test@example.com)")
+            except Exception as e:
+                logger.debug(f"Test user seed skipped: {e}")
+        else:
+            if not verify_password("Test@12345", test_user.hashed_password):
+                await repo.update_user(test_user.user_id, {"hashed_password": hash_password("Test@12345")})
+                logger.info("Updated testuser password to match default credentials")
+
+        admin_user = await repo.find_by_email("admin@oil.in")
+        if not admin_user:
+            try:
+                await auth_service.register_user(UserCreate(
+                    username="admin",
+                    email="admin@oil.in",
+                    password="password123",
+                    full_name="HSE Administrator",
+                    role=UserRole.ADMIN,
+                    department="Safety Management"
+                ))
+                logger.info("Seeded default admin user account: admin (admin@oil.in)")
+            except Exception as e:
+                logger.debug(f"Admin user seed skipped: {e}")
+        else:
+            if not verify_password("password123", admin_user.hashed_password):
+                await repo.update_user(admin_user.user_id, {"hashed_password": hash_password("password123")})
+                logger.info("Updated admin password to match default credentials")
+    except Exception as e:
+        logger.warning(f"Initial user seeding skipped: {e}")
+
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """Application Startup and Shutdown Lifecycle."""
     logger.info("Initializing FastAPI Backend for OIL SIF Precursor Detection...")
     await connect_to_mongo()
+    await seed_initial_users()
     yield
     logger.info("Shutting down FastAPI Backend...")
     await close_mongo_connection()
@@ -46,7 +102,12 @@ app = FastAPI(
 )
 
 # CORS Configuration
-origins = settings.FRONTEND_URL if isinstance(settings.FRONTEND_URL, list) else [settings.FRONTEND_URL]
+origins = settings.FRONTEND_URL if isinstance(settings.FRONTEND_URL, list) else [str(settings.FRONTEND_URL)]
+default_origins = ["http://localhost:5173", "http://127.0.0.1:5173", "http://localhost:3000", "http://127.0.0.1:3000"]
+for orig in default_origins:
+    if orig not in origins:
+        origins.append(orig)
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,

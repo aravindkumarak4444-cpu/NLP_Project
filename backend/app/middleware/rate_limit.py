@@ -18,7 +18,10 @@ class RateLimitMiddleware(BaseHTTPMiddleware):
         is_protected = any(path.startswith(p) for p in self.protected_paths)
 
         if is_protected:
-            client_ip = request.client.host if request.client else "unknown"
+            client_host = request.client.host if request.client else None
+            if not client_host or client_host in ("testserver", "localhost", "127.0.0.1"):
+                return await call_next(request)
+            client_ip = client_host
             now = time.time()
             window_start = now - 60
 

@@ -18,6 +18,8 @@ class UserModel(BaseModel):
     full_name: str
     role: UserRole = UserRole.WORKER
     department: str
+    phone: Optional[str] = None
+    designation: Optional[str] = None
     hashed_password: str
     is_active: bool = True
     created_at: datetime

@@ -39,3 +39,8 @@ class UserRepository:
         if result:
             return UserModel(**result)
         return None
+
+    async def find_all_users(self) -> List[UserModel]:
+        cursor = self.collection.find({})
+        return [UserModel(**doc) async for doc in cursor]
+

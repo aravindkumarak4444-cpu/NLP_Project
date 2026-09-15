@@ -13,18 +13,23 @@ from app.models.user import UserModel
 router = APIRouter(prefix="/analysis", tags=["AI Analysis Pipeline"])
 
 
+from app.integrations.pattern_adapter import PatternAdapter
+
+
 def get_analysis_service(db=Depends(get_database)) -> AnalysisService:
     report_repo = ReportRepository(db)
     ai_adapter = AIAdapter()
     rule_adapter = RuleAdapter()
     risk_service = RiskService()
     recommendation_service = RecommendationService()
+    pattern_adapter = PatternAdapter()
     return AnalysisService(
         report_repo=report_repo,
         ai_adapter=ai_adapter,
         rule_adapter=rule_adapter,
         risk_service=risk_service,
-        recommendation_service=recommendation_service
+        recommendation_service=recommendation_service,
+        pattern_adapter=pattern_adapter
     )
 
 

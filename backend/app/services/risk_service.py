@@ -27,8 +27,12 @@ class RiskService:
     ) -> RiskAssessmentModel:
         severity = ai_analysis.severity if ai_analysis.severity is not None else 2
 
-        # Base likelihood estimation based on SIF precursor flag and hazard complexity
-        if likelihood_override and 1 <= likelihood_override <= 5:
+        # Override severity and likelihood for compliant / prevented reports
+        ctx_type = getattr(ai_analysis, "context_type", "UNKNOWN")
+        if ctx_type in ["SAFE_COMPLIANCE", "PREVENTED_EVENT"]:
+            severity = min(severity, 2)
+            likelihood = 1
+        elif likelihood_override and 1 <= likelihood_override <= 5:
             likelihood = likelihood_override
         else:
             if ai_analysis.sif_precursor:
@@ -60,3 +64,4 @@ class RiskService:
             likelihood=likelihood,
             severity=severity
         )
+

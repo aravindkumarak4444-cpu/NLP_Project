@@ -15,5 +15,5 @@ class TokenData(BaseModel):
 
 
 class LoginRequest(BaseModel):
-    email: EmailStr
+    email: str
     password: str

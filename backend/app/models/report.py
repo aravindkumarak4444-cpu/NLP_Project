@@ -53,6 +53,12 @@ class AIAnalysisModel(BaseModel):
     severity: int = 1
     evidence: List[str] = Field(default_factory=list)
     model_source: str = "FALLBACK"
+    raw_prediction: Optional[bool] = None
+    raw_confidence: Optional[float] = None
+    context_type: str = "UNKNOWN"
+    context_adjustment_reason: Optional[str] = None
+    training_familiarity: float = 1.0
+    is_novel: bool = False
 
 
 class RiskAssessmentModel(BaseModel):
@@ -75,6 +81,12 @@ class RecommendationsModel(BaseModel):
 
 
 class PatternDataModel(BaseModel):
+    sif_potential: bool = False
+    confidence: float = 0.0
+    activity: str = ""
+    location: str = ""
+    barrier_failure: str = ""
+    precursor_patterns: List[str] = Field(default_factory=list)
     hazard_pattern: Optional[str] = None
     location_pattern: Optional[str] = None
     department_pattern: Optional[str] = None

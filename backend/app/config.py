@@ -31,7 +31,11 @@ class Settings(BaseSettings):
         validation_alias=AliasChoices("ACCESS_TOKEN_EXPIRE_MINUTES", "TOKEN_EXPIRE_MINUTES")
     )
 
-    FRONTEND_URL: Union[str, List[str]] = "http://localhost:5173"
+    FRONTEND_URL: Union[str, List[str]] = [
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+        "http://localhost:3000"
+    ]
     MODEL_PATH: str = "ml/models/model.pkl"
 
     model_config = SettingsConfigDict(

@@ -62,6 +62,9 @@ class AuthService:
     async def login_user(self, login_req: LoginRequest) -> Token:
         user = await self.user_repo.find_by_email(login_req.email)
         if not user:
+            user = await self.user_repo.find_by_username(login_req.email)
+
+        if not user:
             raise APIException(
                 code="INVALID_CREDENTIALS",
                 message="Invalid email or password credentials.",

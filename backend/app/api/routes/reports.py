@@ -32,6 +32,20 @@ async def create_report(
     return await service.create_report(report_in, current_user)
 
 
+@router.get("/my", response_model=ReportListResponse, summary="Get Reports Submitted by Current Worker")
+async def list_my_reports(
+    page: int = Query(1, ge=1, description="Page number"),
+    limit: int = Query(20, ge=1, le=100, description="Items per page"),
+    current_user: UserModel = Depends(get_current_user),
+    service: ReportService = Depends(get_report_service)
+):
+    return await service.list_reports(
+        page=page,
+        limit=limit,
+        submitted_by=current_user.email
+    )
+
+
 @router.get("", response_model=ReportListResponse, summary="List & Filter Safety Reports")
 async def list_reports(
     page: int = Query(1, ge=1, description="Page number"),
@@ -46,6 +60,21 @@ async def list_reports(
     current_user: UserModel = Depends(get_current_user),
     service: ReportService = Depends(get_report_service)
 ):
+    # Workers only see their own reports
+    if current_user.role == UserRole.WORKER:
+        return await service.list_reports(
+            page=page,
+            limit=limit,
+            status=status,
+            report_type=report_type,
+            risk_level=risk_level,
+            sif_precursor=sif_precursor,
+            department=department,
+            location=location,
+            submitted_by=current_user.email,
+            search=search
+        )
+
     return await service.list_reports(
         page=page,
         limit=limit,
@@ -88,14 +117,25 @@ async def update_status(
     return await service.update_report_status(report_id, status_in, current_user)
 
 
-@router.post("/{report_id}/actions", response_model=ReportResponse, summary="Add Corrective Action Item")
-async def add_action_item(
+from app.schemas.report import (
+    ReportCreate,
+    ReportUpdate,
+    ReportStatusUpdate,
+    ReportResponse,
+    ReportListResponse,
+    ActionItemCreate,
+    ActionItemUpdate
+)
+
+@router.patch("/{report_id}/actions/{action_id}", response_model=ReportResponse, summary="Update Action Item Status")
+async def update_action_item_status(
     report_id: str,
-    action_in: ActionItemCreate,
+    action_id: str,
+    action_update: ActionItemUpdate,
     current_user: UserModel = Depends(require_roles([UserRole.SAFETY_OFFICER, UserRole.MANAGER, UserRole.ADMIN])),
     service: ReportService = Depends(get_report_service)
 ):
-    return await service.add_action_item(report_id, action_in, current_user)
+    return await service.update_action_item(report_id, action_id, action_update, current_user)
 
 
 @router.delete("/{report_id}", status_code=status.HTTP_204_NO_CONTENT, summary="Delete Safety Report")
@@ -106,3 +146,4 @@ async def delete_report(
 ):
     await service.delete_report(report_id, current_user)
     return None
+

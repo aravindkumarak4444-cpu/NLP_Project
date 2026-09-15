@@ -1,4 +1,5 @@
 import os
+import sys
 import logging
 import importlib.util
 from typing import Dict, Any, Optional, List
@@ -7,6 +8,22 @@ from app.models.report import AIAnalysisModel
 from app.config import settings
 
 logger = logging.getLogger("sif_backend")
+
+# Ensure project root is in sys.path for ml module imports
+BASE_PROJECT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../.."))
+if BASE_PROJECT_DIR not in sys.path:
+    sys.path.insert(0, BASE_PROJECT_DIR)
+
+try:
+    from ml.registry.model_registry import ModelRegistry
+    from ml.models.hf_adapter import HuggingFaceAdapter
+    from ml.models.baseline import BaselineMLModel
+    from ml.models.language import MultilingualSafetyEngine
+    from ml.data.preprocessing import TextPreprocessor
+    ML_MODULE_AVAILABLE = True
+except ImportError as e:
+    logger.warning(f"ml package import warning in ai_adapter: {e}")
+    ML_MODULE_AVAILABLE = False
 
 
 def normalize_output(raw_output: Any, model_source: str) -> AIAnalysisModel:
@@ -36,13 +53,13 @@ def normalize_output(raw_output: Any, model_source: str) -> AIAnalysisModel:
             raw_output = raw_output[0]
 
     if isinstance(raw_output, dict):
-        sif = raw_output.get("sif_precursor", raw_output.get("sif", raw_output.get("label", raw_output.get("is_sif", False))))
+        sif = raw_output.get("sif_potential", raw_output.get("sif_precursor", raw_output.get("sif", raw_output.get("label", raw_output.get("is_sif", False)))))
         if isinstance(sif, str):
             sif = sif.upper() in ["SIF", "PRECURSOR", "TRUE", "1", "YES"]
         elif isinstance(sif, (int, float)):
             sif = bool(sif)
 
-        conf = float(raw_output.get("confidence", raw_output.get("score", raw_output.get("prob", 0.88 if sif else 0.75))))
+        conf = float(raw_output.get("sif_probability", raw_output.get("confidence", raw_output.get("score", raw_output.get("prob", 0.88 if sif else 0.75)))))
         cat = str(raw_output.get("hazard_category", raw_output.get("hazard", raw_output.get("category", "UNCLASSIFIED"))))
         act = raw_output.get("unsafe_act", raw_output.get("act"))
         cond = raw_output.get("unsafe_condition", raw_output.get("condition"))
@@ -50,6 +67,12 @@ def normalize_output(raw_output: Any, model_source: str) -> AIAnalysisModel:
         ev = raw_output.get("evidence", [])
         if isinstance(ev, str):
             ev = [ev]
+        ls_rules = raw_output.get("life_saving_rules")
+        if ls_rules and isinstance(ls_rules, list):
+            ev = list(ev)
+            ev.append(f"Mapped Life-Saving Rules: {', '.join(str(r) for r in ls_rules)}")
+            if cat == "UNCLASSIFIED" and len(ls_rules) > 0 and ls_rules[0] != "None":
+                cat = ls_rules[0].upper().replace(" ", "_")
 
         return AIAnalysisModel(
             sif_precursor=bool(sif),
@@ -117,12 +140,30 @@ class BaseAIAdapter(ABC):
         pass
 
 
+class HuggingFaceAIAdapter(BaseAIAdapter):
+    """Adapter leveraging HuggingFace Transformer Pipeline."""
+    def __init__(self, model_name: Optional[str] = None):
+        if not ML_MODULE_AVAILABLE:
+            raise RuntimeError("ml package not available for HuggingFaceAIAdapter")
+        self.adapter = HuggingFaceAdapter(model_name)
+
+    def analyze(self, text: str) -> AIAnalysisModel:
+        raw_res = self.adapter.predict(text)
+        return normalize_output(raw_res, model_source="HUGGINGFACE")
+
+    def get_info(self) -> Dict[str, Any]:
+        info = self.adapter.get_info()
+        info["mode"] = "HUGGINGFACE"
+        return info
+
+
 class RealMLModelAdapter(BaseAIAdapter):
-    """Adapter for Member 1 binary pickled model (model.pkl)."""
+    """Adapter for Member 1 binary pickled model (model.pkl / sif_classifier.pkl)."""
     def __init__(self, model_path: str, relative_path: str):
         self.model_path = model_path
         self.relative_path = relative_path
         self.model = None
+        self.vectorizer = None
         self.load_error: Optional[str] = None
         self._load_model()
 
@@ -132,6 +173,19 @@ class RealMLModelAdapter(BaseAIAdapter):
             self.model = joblib.load(self.model_path)
             if not (hasattr(self.model, "predict") or callable(self.model)):
                 raise ValueError("Loaded model object lacks a callable predict method.")
+            
+            # Check for companion tfidf_vectorizer.pkl / vectorizer.pkl
+            model_dir = os.path.dirname(self.model_path)
+            for vec_name in ["tfidf_vectorizer.pkl", "vectorizer.pkl", "sif_vectorizer.pkl"]:
+                vec_candidate = os.path.join(model_dir, vec_name)
+                if os.path.exists(vec_candidate) and os.path.getsize(vec_candidate) > 0:
+                    try:
+                        self.vectorizer = joblib.load(vec_candidate)
+                        logger.info(f"Loaded companion vectorizer from {vec_name}")
+                        break
+                    except Exception as ve:
+                        logger.warning(f"Could not load vectorizer {vec_candidate}: {ve}")
+
             logger.info(f"Loaded Member 1 binary model from {self.relative_path}")
         except Exception as e:
             self.load_error = f"REAL MODEL DETECTED BUT FAILED TO LOAD: {str(e)}"
@@ -141,14 +195,23 @@ class RealMLModelAdapter(BaseAIAdapter):
         if not self.model or self.load_error:
             raise RuntimeError(self.load_error or "Binary model not loaded.")
         
-        # Check predict or callable
-        raw_pred = self.model.predict([text]) if hasattr(self.model, "predict") else self.model(text)
+        fam_score = 1.0
+        if self.vectorizer:
+            clean_t = TextPreprocessor.clean_text(text) if ML_MODULE_AVAILABLE else text.lower()
+            input_data = self.vectorizer.transform([clean_t])
+            nnz_count = getattr(input_data, "nnz", 0)
+            words = [w for w in clean_t.split() if len(w) > 2]
+            if len(words) > 0:
+                fam_score = round(min(1.0, max(0.1, (nnz_count / max(1, len(words))) * 1.35)), 2)
+        else:
+            input_data = [text]
+
+        raw_pred = self.model.predict(input_data) if hasattr(self.model, "predict") else self.model(input_data)
         
-        # Check predict_proba if available
         confidence_override = None
         if hasattr(self.model, "predict_proba"):
             try:
-                proba = self.model.predict_proba([text])[0]
+                proba = self.model.predict_proba(input_data)[0]
                 if hasattr(proba, "__iter__"):
                     confidence_override = round(float(max(proba)), 2)
             except Exception as e:
@@ -157,6 +220,7 @@ class RealMLModelAdapter(BaseAIAdapter):
         norm = normalize_output(raw_pred, model_source="REAL_MODEL")
         if confidence_override is not None:
             norm.confidence = confidence_override
+        norm.training_familiarity = fam_score
         return norm
 
     def get_info(self) -> Dict[str, Any]:
@@ -186,18 +250,27 @@ class PredictScriptAdapter(BaseAIAdapter):
 
     def _load_script(self):
         try:
+            script_dir = os.path.dirname(self.script_path)
+            if script_dir not in sys.path:
+                sys.path.insert(0, script_dir)
             spec = importlib.util.spec_from_file_location("member1_predict", self.script_path)
             if spec is None or spec.loader is None:
                 raise ImportError(f"Could not load spec from {self.script_path}")
             module = importlib.util.module_from_spec(spec)
             spec.loader.exec_module(module)
-            predict_fn = getattr(module, "predict", getattr(module, "analyze_text", getattr(module, "predict_sif", None)))
+            predict_fn = (
+                getattr(module, "process_complete_report", None) or
+                getattr(module, "predict", None) or
+                getattr(module, "analyze_text", None) or
+                getattr(module, "predict_sif", None) or
+                getattr(module, "analyze", None)
+            )
             if not callable(predict_fn):
-                raise ValueError("predict.py exists but does not export a callable predict(text), analyze_text(text), or predict_sif(text) function.")
+                raise ValueError("predict.py exists but does not export a callable process_complete_report, predict, analyze_text, or predict_sif function.")
             self.predict_func = predict_fn
             logger.info(f"Loaded Member 1 prediction script from {self.relative_path}")
         except Exception as e:
-            self.load_error = f"PREDICT SCRIPT DETECTED BUT FAILED TO LOAD: {str(e)}"
+            self.load_error = f"REAL MODEL SCRIPT DETECTED BUT FAILED TO LOAD: {str(e)}"
             logger.error(f"Failed to load predict script at {self.script_path}: {str(e)}", exc_info=True)
 
     def analyze(self, text: str) -> AIAnalysisModel:
@@ -315,6 +388,14 @@ class FallbackAdapter(BaseAIAdapter):
         if not detected_unsafe_condition and matched_category != "GENERAL_SAFETY":
             detected_unsafe_condition = f"UNPROTECTED_{matched_category}_HAZARD"
 
+        if ML_MODULE_AVAILABLE:
+            safety_ctx = TextPreprocessor.analyze_safety_context(text)
+            c_type = safety_ctx.get("context_type", "UNKNOWN")
+            if c_type in ["SAFE_COMPLIANCE", "PREVENTED_EVENT"]:
+                sif_precursor = False
+                detected_unsafe_act = None
+                severity = min(severity, 2)
+
         return AIAnalysisModel(
             sif_precursor=sif_precursor,
             confidence=round(confidence, 2),
@@ -329,19 +410,36 @@ class FallbackAdapter(BaseAIAdapter):
 
 class AIAdapter:
     """
-    Facade AIAdapter managing strategy selection according to Member 1 availability:
-    1. RealMLModelAdapter (model.pkl)
-    2. PredictScriptAdapter (predict.py)
-    3. FallbackAdapter (Domain NLP Engine)
+    Facade AIAdapter managing strategy selection according to Member 1 availability and ModelRegistry:
+    1. ModelRegistry active model (Hugging Face / Baseline ML)
+    2. RealMLModelAdapter (model.pkl)
+    3. PredictScriptAdapter (predict.py)
+    4. FallbackAdapter (Domain NLP Engine)
     """
     def __init__(self):
+        self.registry: Optional[Any] = ModelRegistry() if ML_MODULE_AVAILABLE else None
         self.active_adapter: BaseAIAdapter = self._detect_and_create_adapter()
 
     def _detect_and_create_adapter(self) -> BaseAIAdapter:
-        base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../.."))
-        
+        base_dir = BASE_PROJECT_DIR
+
+        # Check ModelRegistry active model choice
+        if self.registry:
+            active_info = self.registry.get_active_model_info()
+            if active_info:
+                model_type = active_info.get("model_type", "")
+                if model_type == "HUGGINGFACE":
+                    try:
+                        hf_adapter = HuggingFaceAIAdapter(active_info.get("model_name"))
+                        if hf_adapter.get_info()["model_loaded"]:
+                            logger.info(f"Using active HuggingFace model from registry: {active_info['model_id']}")
+                            return hf_adapter
+                    except Exception as e:
+                        logger.warning(f"Active HuggingFace model failed to initialize: {e}")
+
         # Priority 1: Binary pickled model (model.pkl)
         pkl_candidates = [
+            os.path.abspath(os.path.join(base_dir, "ai_model/model/sif_classifier.pkl")),
             os.path.abspath(os.path.join(base_dir, "backend/ml/models/model.pkl")),
             os.path.abspath(os.path.join(base_dir, "ml/models/model.pkl")),
             os.path.abspath(settings.MODEL_PATH)
@@ -354,7 +452,6 @@ class AIAdapter:
                 if adapter.get_info()["model_loaded"]:
                     return adapter
                 else:
-                    # Keep failed adapter so get_status() reflects exact loading error
                     logger.error(f"Real model binary at {rel_path} detected but failed initialization.")
                     return adapter
 
@@ -390,25 +487,115 @@ class AIAdapter:
                 model_source=status_info.get("mode", "FALLBACK")
             )
 
+        # Multilingual & Negation pre-processing enrichments
+        multilingual_info = None
+        negation_info = None
+        if ML_MODULE_AVAILABLE:
+            try:
+                multilingual_info = MultilingualSafetyEngine.process_multilingual_report(text)
+                negation_info = TextPreprocessor.extract_negations_and_hazards(text)
+            except Exception as e:
+                logger.debug(f"Pre-processing extraction notice: {e}")
+
         try:
-            return self.active_adapter.analyze(text)
+            result = self.active_adapter.analyze(text)
         except Exception as e:
             logger.error(f"Error in AIAdapter ({status_info['mode']}) execution: {str(e)}", exc_info=True)
             if status_info["mode"] != "FALLBACK":
-                logger.warning("Active real model execution failed; falling back safely to NLP baseline.")
+                logger.warning("Active model execution failed; falling back safely to NLP baseline.")
                 fallback = FallbackAdapter()
-                res = fallback.analyze(text)
-                res.evidence.append(f"Notice: {status_info['mode']} runtime warning; using baseline output.")
-                return res
+                result = fallback.analyze(text)
+                result.evidence.append(f"Notice: {status_info['mode']} runtime warning; using baseline output.")
+            else:
+                result = AIAnalysisModel(
+                    sif_precursor=False,
+                    confidence=0.5,
+                    hazard_category="UNCLASSIFIED",
+                    severity=2,
+                    evidence=["Automated AI extraction encountered an error; manual review advised."],
+                    model_source="FALLBACK"
+                )
 
-            return AIAnalysisModel(
-                sif_precursor=False,
-                confidence=0.5,
-                hazard_category="UNCLASSIFIED",
-                severity=2,
-                evidence=["Automated AI extraction encountered an error; manual review advised."],
-                model_source="FALLBACK"
-            )
+        # Enrich result with multilingual detection if present
+        if multilingual_info and multilingual_info.get("language") != "en":
+            lang_name = multilingual_info.get("language_name", "Non-English")
+            result.evidence.append(f"Multilingual Report: Detected {lang_name} safety terminology")
+
+        # Enrich evidence with negation info if present
+        if negation_info and negation_info.get("has_negation"):
+            neg_terms = ", ".join(negation_info.get("detected_negations", []))
+            result.evidence.append(f"Negation Aware: Context includes safety negation ({neg_terms})")
+
+        # Enrich hazard category if active model output UNCLASSIFIED or UNKNOWN
+        if result.hazard_category in ["UNCLASSIFIED", "UNKNOWN", "GENERAL_SAFETY"]:
+            fallback_extract = FallbackAdapter()._analyze_with_nlp_engine(text)
+            if fallback_extract.hazard_category != "GENERAL_SAFETY":
+                result.hazard_category = fallback_extract.hazard_category
+                result.severity = max(result.severity, fallback_extract.severity)
+                if fallback_extract.unsafe_act:
+                    result.unsafe_act = result.unsafe_act or fallback_extract.unsafe_act
+                if fallback_extract.unsafe_condition:
+                    result.unsafe_condition = result.unsafe_condition or fallback_extract.unsafe_condition
+
+        # Record raw model prediction and raw confidence
+        if result.raw_prediction is None:
+            result.raw_prediction = result.sif_precursor
+        if result.raw_confidence is None:
+            result.raw_confidence = result.confidence
+
+        # Perform Domain Safety Context Analysis & Explainable Adjustment
+        if ML_MODULE_AVAILABLE:
+            safety_ctx = TextPreprocessor.analyze_safety_context(text)
+            c_type = safety_ctx.get("context_type", "UNKNOWN")
+            result.context_type = c_type
+
+            if c_type in ["SAFE_COMPLIANCE", "PREVENTED_EVENT"]:
+                result.sif_precursor = False
+                result.severity = min(result.severity, 2)
+                result.unsafe_act = None
+                display_type = c_type.replace('_', ' ').title()
+                result.context_adjustment_reason = (
+                    f"Safety Context Adjustment: Report represents {display_type}. "
+                    f"Raw ML model flagged SIF potential based on hazard terminology, but final SIF precursor "
+                    f"set to False because safe procedures were followed / event was prevented."
+                )
+                if safety_ctx.get("evidence_phrases"):
+                    for phrase in safety_ctx["evidence_phrases"]:
+                        result.evidence.append(f"Context evidence: '{phrase}'")
+            elif c_type == "UNSAFE_BEHAVIOR":
+                result.sif_precursor = True
+                result.context_adjustment_reason = "Unsafe behavior or violation confirmed by safety context analysis."
+                if safety_ctx.get("evidence_phrases"):
+                    for phrase in safety_ctx["evidence_phrases"]:
+                        result.evidence.append(f"Context evidence: '{phrase}'")
+            elif c_type == "NEAR_MISS":
+                result.sif_precursor = True
+                result.context_adjustment_reason = "Near-miss event confirmed by safety context analysis."
+                if safety_ctx.get("evidence_phrases"):
+                    for phrase in safety_ctx["evidence_phrases"]:
+                        result.evidence.append(f"Context evidence: '{phrase}'")
+            else:
+                result.context_adjustment_reason = "No specific safety compliance or negation phrases detected; relying on raw ML model prediction."
+        else:
+            result.context_type = "UNKNOWN"
+            result.context_adjustment_reason = "ML module unavailable; using baseline prediction."
+
+        # Novelty / Training Familiarity Check
+        if result.training_familiarity < 0.40 or result.context_type == "UNKNOWN" or result.confidence < 0.60:
+            result.is_novel = (result.training_familiarity < 0.40 or result.context_type == "UNKNOWN")
+            if result.is_novel:
+                result.evidence.append(f"Novelty Detection: Training familiarity ({result.training_familiarity}) is low / unfamiliar vocab. Safety Officer review required.")
+
+        return result
+
 
     def get_status(self) -> Dict[str, Any]:
-        return self.active_adapter.get_info()
+        info = self.active_adapter.get_info()
+        if self.registry:
+            active_reg = self.registry.get_active_model_info()
+            if active_reg:
+                info["active_model_id"] = active_reg.get("model_id")
+                info["active_model_name"] = active_reg.get("model_name")
+                info["active_metrics"] = active_reg.get("metrics")
+        return info
+

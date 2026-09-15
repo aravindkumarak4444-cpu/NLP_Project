@@ -164,3 +164,54 @@ def test_invalid_model_handling():
     finally:
         if os.path.exists(tmp_path):
             os.remove(tmp_path)
+
+
+def test_safety_context_safe_compliance():
+    adapter = AIAdapter()
+    res = adapter.analyze("Worker completed gas testing before entering confined space and used required PPE.")
+    assert res.sif_precursor is False
+    assert res.context_type == "SAFE_COMPLIANCE"
+    assert res.context_adjustment_reason is not None
+    assert "Safety Context Adjustment" in res.context_adjustment_reason
+    assert res.unsafe_act is None
+
+    from app.services.risk_service import RiskService
+    risk = RiskService().calculate_risk(res)
+    assert risk.level.value == "LOW"
+
+
+def test_safety_context_prevented_event():
+    adapter = AIAdapter()
+    res = adapter.analyze("Worker did not enter confined space because gas testing was not completed.")
+    assert res.sif_precursor is False
+    assert res.context_type == "PREVENTED_EVENT"
+    assert res.context_adjustment_reason is not None
+    assert "Prevented Event" in res.context_adjustment_reason
+    assert res.unsafe_act is None
+
+    from app.services.risk_service import RiskService
+    risk = RiskService().calculate_risk(res)
+    assert risk.level.value == "LOW"
+
+
+def test_safety_context_unsafe_act():
+    adapter = AIAdapter()
+    res = adapter.analyze("Technician entered confined space vessel without gas testing.")
+    assert res.sif_precursor is True
+    assert res.context_type == "UNSAFE_BEHAVIOR"
+
+    from app.services.risk_service import RiskService
+    risk = RiskService().calculate_risk(res)
+    assert risk.level.value in ["HIGH", "CRITICAL"]
+
+
+def test_safety_context_near_miss():
+    adapter = AIAdapter()
+    res = adapter.analyze("Heavy load nearly fell while lifting with crane due to damaged sling.")
+    assert res.sif_precursor is True
+    assert res.context_type == "NEAR_MISS"
+
+    from app.services.risk_service import RiskService
+    risk = RiskService().calculate_risk(res)
+    assert risk.level.value in ["HIGH", "CRITICAL"]
+

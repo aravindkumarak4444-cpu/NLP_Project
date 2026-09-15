@@ -61,6 +61,41 @@ class ReportService:
 
         saved = await self.report_repo.create_report(model)
         logger.info(f"Created safety report: {saved.report_id} by {user.email}")
+
+        try:
+            from app.database.connection import get_database
+            from app.database.repositories.notification_repository import NotificationRepository
+            from app.database.repositories.audit_repository import AuditRepository
+            from app.models.notification import NotificationModel
+            from app.models.audit import AuditLogModel
+            from app.models.user import UserRole
+
+            db = get_database()
+            notif_repo = NotificationRepository(db)
+            audit_repo = AuditRepository(db)
+
+            await notif_repo.create_notification(NotificationModel(
+                notification_id=f"NOTIF-{int(now.timestamp())}",
+                recipient_role=UserRole.SAFETY_OFFICER,
+                title="New Safety Report Submitted",
+                message=f"Report {saved.report_id} ({saved.report_type.value}) submitted by {user.full_name or user.email} in {saved.department}.",
+                report_id=saved.report_id,
+                created_at=now
+            ))
+
+            await audit_repo.log_event(AuditLogModel(
+                log_id=f"AUD-{int(now.timestamp())}",
+                event="REPORT_CREATED",
+                user_id=user.user_id,
+                user_name=user.full_name or user.username,
+                user_role=user.role,
+                report_id=saved.report_id,
+                details={"report_type": saved.report_type.value, "department": saved.department},
+                timestamp=now
+            ))
+        except Exception as e:
+            logger.warning(f"Could not dispatch creation notification or audit log: {e}")
+
         return ReportResponse(**saved.model_dump())
 
     async def get_report_by_id(self, report_id: str) -> ReportResponse:
@@ -156,6 +191,58 @@ class ReportService:
         updated = await self.report_repo.update_report(report_id, update_data)
         return ReportResponse(**updated.model_dump())
 
+    async def update_action_item(
+        self,
+        report_id: str,
+        action_id: str,
+        action_update: ActionItemUpdate,
+        user: UserModel
+    ) -> ReportResponse:
+        existing = await self.report_repo.find_by_id(report_id)
+        if not existing:
+            raise APIException(
+                code="REPORT_NOT_FOUND",
+                message=f"Safety report with ID '{report_id}' was not found.",
+                status_code=status.HTTP_404_NOT_FOUND
+            )
+
+        actions = existing.actions or []
+        found = False
+        now = utc_now()
+
+        for a in actions:
+            if a.action_id == action_id:
+                found = True
+                a.status = action_update.status
+                if action_update.assigned_to:
+                    a.assigned_to = action_update.assigned_to
+                if action_update.status == ActionStatus.COMPLETED and not a.completed_at:
+                    a.completed_at = now
+                break
+
+        if not found:
+            raise APIException(
+                code="ACTION_NOT_FOUND",
+                message=f"Action item with ID '{action_id}' was not found in report '{report_id}'.",
+                status_code=status.HTTP_404_NOT_FOUND
+            )
+
+        # Update overall report status if all actions are completed
+        all_completed = all(a.status == ActionStatus.COMPLETED for a in actions)
+        new_status = existing.status
+        if all_completed and existing.status in [ReportStatus.ACTION_ASSIGNED, ReportStatus.IN_PROGRESS]:
+            new_status = ReportStatus.RESOLVED
+
+        update_data = {
+            "actions": [a.model_dump() for a in actions],
+            "status": new_status,
+            "updated_at": now
+        }
+
+        updated = await self.report_repo.update_report(report_id, update_data)
+        return ReportResponse(**updated.model_dump())
+
+
     async def list_reports(
         self,
         page: int = 1,
@@ -166,6 +253,7 @@ class ReportService:
         sif_precursor: Optional[bool] = None,
         department: Optional[str] = None,
         location: Optional[str] = None,
+        submitted_by: Optional[str] = None,
         search: Optional[str] = None
     ) -> ReportListResponse:
         page = max(1, page)
@@ -180,6 +268,7 @@ class ReportService:
             sif_precursor=sif_precursor,
             department=department,
             location=location,
+            submitted_by=submitted_by,
             search=search
         )
 

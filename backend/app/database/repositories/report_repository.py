@@ -44,6 +44,7 @@ class ReportRepository:
         sif_precursor: Optional[bool] = None,
         department: Optional[str] = None,
         location: Optional[str] = None,
+        submitted_by: Optional[str] = None,
         search: Optional[str] = None,
         sort_by: str = "created_at",
         sort_order: str = "desc"
@@ -62,6 +63,8 @@ class ReportRepository:
             query["department"] = {"$regex": department, "$options": "i"}
         if location:
             query["location"] = {"$regex": location, "$options": "i"}
+        if submitted_by:
+            query["submitted_by"] = {"$regex": submitted_by, "$options": "i"}
         if search:
             query["$or"] = [
                 {"description": {"$regex": search, "$options": "i"}},
