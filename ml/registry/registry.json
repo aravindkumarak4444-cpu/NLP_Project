@@ -1,0 +1,117 @@
+{
+  "active_model_id": "MOD-200SAMPLES-1789490144",
+  "models": [
+    {
+      "model_id": "MOD-BASELINE-V1",
+      "model_name": "TF-IDF + Logistic Regression Baseline",
+      "model_type": "BASELINE_ML",
+      "version": "1.0.0",
+      "dataset_version": "SAMPLE-V1",
+      "training_date": "2026-09-15T19:54:52.877512",
+      "metrics": {
+        "accuracy": 0.92,
+        "precision": 0.9,
+        "recall": 0.95,
+        "f1": 0.92,
+        "macro_f1": 0.92,
+        "weighted_f1": 0.92
+      },
+      "status": "INACTIVE",
+      "artifact_path": "ai_model/model/sif_classifier.pkl",
+      "description": "Baseline TF-IDF Logistic Regression Model"
+    },
+    {
+      "model_id": "MOD-BASELINE-1789482292",
+      "model_name": "TF-IDF + LOGISTIC Classifier",
+      "model_type": "BASELINE_ML",
+      "version": "1.1.0",
+      "dataset_version": "sample_reports.csv",
+      "training_date": "2026-09-15T19:54:52.878514",
+      "metrics": {
+        "insufficient_data": false,
+        "accuracy": 0.5,
+        "precision": 0.5,
+        "recall": 1.0,
+        "f1": 0.6667,
+        "macro_f1": 0.3333,
+        "weighted_f1": 0.3333,
+        "confusion_matrix": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "sample_count": 2
+      },
+      "status": "INACTIVE",
+      "artifact_path": "ai_model/model/sif_classifier.pkl",
+      "description": "Trained on 8 samples using LOGISTIC."
+    },
+    {
+      "model_id": "MOD-200SAMPLES-1789490114",
+      "model_name": "TF-IDF + Logistic Regression (200 Samples 80/20 Split)",
+      "model_type": "BASELINE_ML",
+      "version": "2.0.0",
+      "dataset_version": "sif_200_dataset.csv",
+      "training_date": "2026-09-15T22:05:14.300241",
+      "metrics": {
+        "insufficient_data": false,
+        "accuracy": 0.8,
+        "precision": 0.7333,
+        "recall": 1.0,
+        "f1": 0.8462,
+        "macro_f1": 0.7802,
+        "weighted_f1": 0.7868,
+        "confusion_matrix": [
+          [
+            10,
+            8
+          ],
+          [
+            0,
+            22
+          ]
+        ],
+        "sample_count": 40
+      },
+      "status": "INACTIVE",
+      "artifact_path": "ai_model/model/sif_classifier.pkl",
+      "description": "Trained on 160 samples (80%), tested on 40 samples (20%)."
+    },
+    {
+      "model_id": "MOD-200SAMPLES-1789490144",
+      "model_name": "TF-IDF + Logistic Regression (200 Samples 80/20 Split)",
+      "model_type": "BASELINE_ML",
+      "version": "2.0.0",
+      "dataset_version": "sif_200_dataset.csv",
+      "training_date": "2026-09-15T22:05:44.631953",
+      "metrics": {
+        "insufficient_data": false,
+        "accuracy": 0.8,
+        "precision": 0.7333,
+        "recall": 1.0,
+        "f1": 0.8462,
+        "macro_f1": 0.7802,
+        "weighted_f1": 0.7868,
+        "confusion_matrix": [
+          [
+            10,
+            8
+          ],
+          [
+            0,
+            22
+          ]
+        ],
+        "sample_count": 40
+      },
+      "status": "ACTIVE",
+      "artifact_path": "ai_model/model/sif_classifier.pkl",
+      "description": "Trained on 160 samples (80%), tested on 40 samples (20%)."
+    }
+  ]
+}

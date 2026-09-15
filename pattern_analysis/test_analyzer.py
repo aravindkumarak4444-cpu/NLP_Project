@@ -2,13 +2,23 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from .analyser import (
-    analyse_and_store_report,
-    analyse_report,
-    get_all_analyses,
-    get_analysis_by_id,
-    init_db,
-)
+try:
+    from .analyzer import (
+        analyse_and_store_report,
+        analyse_report,
+        get_all_analyses,
+        get_analysis_by_id,
+        init_db,
+    )
+except ImportError:
+    from analyzer import (
+        analyse_and_store_report,
+        analyse_report,
+        get_all_analyses,
+        get_analysis_by_id,
+        init_db,
+    )
+
 
 
 class TestPatternAnalyser(unittest.TestCase):
@@ -154,6 +164,17 @@ class TestPatternAnalyser(unittest.TestCase):
             len(records),
             0,
         )
+
+    def test_offshore_keyword_collision(self):
+        # 1. Generic work platform should NOT produce Offshore
+        scaffold_report = "Worker was working at height without proper fall protection and nearly fell from the platform."
+        scaffold_result = analyse_report(scaffold_report)
+        self.assertNotEqual(scaffold_result["location"], "Offshore")
+
+        # 2. Genuine offshore platform report SHOULD produce Offshore
+        offshore_report = "Worker was on an offshore platform during maintenance."
+        offshore_result = analyse_report(offshore_report)
+        self.assertEqual(offshore_result["location"], "Offshore")
 
 
 if __name__ == "__main__":

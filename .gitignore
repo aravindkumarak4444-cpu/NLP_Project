@@ -1,12 +1,22 @@
+# Python
+venv/
 __pycache__/
 *.pyc
-.ipynb_checkpoints/
 
+# Environment/secrets
 .env
-venv/
-.venv/
 
-*.pkl
-*.joblib
+# Node
+node_modules/
+dist/
 
-data/raw/
+# Database
+*.db
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

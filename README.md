@@ -6,18 +6,22 @@
 
 ---
 
+> [!NOTE]
+> **System Scope & Disclaimer**: The system identifies operational safety indicators, hazard categories, and potential Serious Injury & Fatality (SIF) precursors in industrial safety reports. It does not medically diagnose physical injury, burnout, or mental health conditions.
+
+---
+
 ## 1. Project Overview
 
-This repository contains the complete, production-ready backend integration layer, AI adapters, risk evaluation engines, Life-Saving Rule mappers, and analytical pattern detection services for Project SIH26165.
+This repository contains the complete, production-ready full-stack web application, backend API integration layer, AI adapters, 5x5 risk evaluation matrix engines, Life-Saving Rule mappers, and analytical pattern detection services for Project SIH26165.
 
-The backend acts as the central orchestrator connecting:
-- Safety Officers & Field Workers $\rightarrow$ React HSE Dashboard (`dashboard/`)
-- Natural Language Input $\rightarrow$ FastAPI Backend (`backend/`)
-- Raw Description $\rightarrow$ SIF Precursor Detection AI Model (`ai_model/`)
-- Detected Hazards $\rightarrow$ Life-Saving Rules Engine (`rule_mapping/`)
-- Severity & Likelihood $\rightarrow$ 5x5 Risk Matrix Assessment Engine
-- Incident Data $\rightarrow$ Pattern & Trend Analysis Engine (`pattern_analysis/`)
-- Database Persistence $\rightarrow$ MongoDB Atlas (`oil_sif` database)
+The system connects:
+- **React HSE Dashboard (`dashboard/`)** $\rightarrow$ Frontend portal built with React 19, TypeScript, Vite, Tailwind CSS, and Recharts.
+- **FastAPI Backend (`backend/`)** $\rightarrow$ Async REST API with Motor MongoDB connection, JWT auth, and role-based permissions (`WORKER`, `SAFETY_OFFICER`, `MANAGER`, `ADMIN`).
+- **SIF Precursor AI Model (`ai_model/`)** $\rightarrow$ Member 1 ML model & text prediction pipeline.
+- **Life-Saving Rules Engine (`rule_mapping/`)** $\rightarrow$ Member 2 keyword & rule mapping engine (`rules.json` / `mapper.py`).
+- **Pattern & Trend Analysis (`pattern_analysis/`)** $\rightarrow$ Member 3 pattern analyzer (`analyzer.py` & SQLite persistence).
+- **Database Persistence** $\rightarrow$ MongoDB Atlas (`oil_sif` database).
 
 ---
 
@@ -28,33 +32,34 @@ SIH26165-SIF-Precursor-AI/
 ├── backend/                        # FastAPI Backend & Integration Layer
 │   ├── app/
 │   │   ├── main.py                 # FastAPI Application & Lifespan Handler
-│   │   ├── config.py               # Pydantic Settings & Environment Loader
-│   │   ├── api/                    # API v1 Routers (auth, reports, analysis, dashboard, rules, patterns, health)
+│   │   ├── config.py               # Settings & Environment Loader
+│   │   ├── api/                    # Routers (auth, reports, analysis, dashboard, rules, patterns, health)
 │   │   ├── auth/                   # JWT Auth, Password Hashing & RBAC
-│   │   ├── database/               # Motor MongoDB Async Connection & Repositories
+│   │   ├── database/               # MongoDB Async Connection & Repositories
 │   │   ├── integrations/           # Teammate Adapters (ai_adapter, rule_adapter, pattern_adapter)
 │   │   ├── middleware/             # Error Handlers & Rate Limiter
 │   │   ├── models/                 # PyMongo & Domain Pydantic Models
-│   │   ├── schemas/                # OpenAPI Request/Response Schemas
-│   │   ├── services/               # Core Business Services (risk, recommendations, report, etc.)
+│   │   ├── schemas/                # Request/Response Schemas
+│   │   ├── services/               # Services (risk, recommendations, report, etc.)
 │   │   └── utils/                  # UUID Generator & Timestamp Helpers
 │   ├── ml/models/                  # AI Model Binaries (.pkl)
 │   ├── tests/                      # Pytest Test Suite
-│   ├── Dockerfile                  # Production Docker Build Setup
+│   ├── Dockerfile                  # Docker Build Setup
 │   ├── docker-compose.yml          # Container Orchestration with MongoDB
-│   ├── .env.example                # Backend Environment Variable Template
 │   └── requirements.txt            # Python Dependencies
+├── dashboard/                      # Member 5 React HSE Dashboard Workspace
+│   ├── src/
+│   │   ├── api/                    # Centralized Axios API Client
+│   │   ├── components/             # Reusable UI Components
+│   │   ├── context/                # AuthContext
+│   │   ├── pages/                  # Pages (Dashboard, Reports, Analysis, Rules, Patterns, Actions, Users, Profile, Settings)
+│   │   └── types/                  # TypeScript Interfaces
+│   └── package.json
 ├── ai_model/                       # Member 1 AI/NLP Model Development Workspace
-│   ├── notebooks/                  # Training Notebooks
-│   └── src/                        # Model Training & Prediction Scripts
 ├── rule_mapping/                   # Member 2 Life-Saving Rules Workspace
 ├── pattern_analysis/               # Member 3 Pattern Detection & Data Pipeline Workspace
-├── dashboard/                      # Member 5 React HSE Dashboard Workspace
-├── data/                           # Sample Datasets & Reports
-├── docs/                           # Architecture Diagrams & Documentation
-├── .env.example                    # Root Environment Template
-├── requirements.txt                # Root Python Dependencies
-└── README.md                       # Main Project Documentation
+├── .env.example                    # Environment Template
+└── README.md                       # Main Documentation
 ```
 
 ---
@@ -63,67 +68,87 @@ SIH26165-SIF-Precursor-AI/
 
 ### Prerequisites
 - Python 3.12+
-- MongoDB Atlas cluster or local MongoDB instance (Port 27017)
-- Docker Desktop (Optional)
-
-### Installation
-
-1. **Clone & Setup Environment:**
-   ```bash
-   cd backend
-   python -m venv venv
-   # On Windows:
-   venv\Scripts\activate
-   # On Linux/macOS:
-   source venv/bin/activate
-   ```
-
-2. **Install Dependencies:**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. **Configure Environment Variables:**
-   Copy `.env.example` to `.env`:
-   ```bash
-   cp .env.example .env
-   ```
-   Set `MONGODB_URI` to your MongoDB Atlas connection string:
-   ```env
-   MONGODB_URI=mongodb+srv://<username>:<password>@<cluster_host>/oil_sif?retryWrites=true&w=majority
-   DATABASE_NAME=oil_sif
-   JWT_SECRET=super_secret_sif_precursor_key_change_in_production_2026
-   ```
-
-4. **Launch Backend Service:**
-   ```bash
-   uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
-   ```
-
-5. **Access Interactive API Documentation:**
-   - Swagger UI: [http://localhost:8000/docs](http://localhost:8000/docs)
-   - ReDoc UI: [http://localhost:8000/redoc](http://localhost:8000/redoc)
-   - Health Check: [http://localhost:8000/health](http://localhost:8000/health)
+- Node.js 18+ and npm
+- MongoDB instance (Local or MongoDB Atlas)
 
 ---
 
-## 4. Team Integration Guide
+### Step A: Launch Backend Service (FastAPI)
 
-| Team Role | Responsibility | Integration Point |
-| :--- | :--- | :--- |
-| **Member 1 (AI/NLP Lead)** | SIF Precursor Detection Model | Place trained model binary at `backend/ml/models/model.pkl` or populate `ai_model/src/predict.py`. `AIAdapter` will automatically load it. |
-| **Member 2 (NLP Specialist)** | Life-Saving Rule Mapping | Populate `rule_mapping/` or update `RuleAdapter` in `backend/app/integrations/rule_adapter.py`. |
-| **Member 3 (Data Engineer)** | Pattern Detection & Data Pipeline | Populate `pattern_analysis/` or update `PatternAdapter` in `backend/app/integrations/pattern_adapter.py`. |
-| **Member 4 (Backend Lead)** | APIs, Auth & Integration Layer | Implemented core FastAPI backend, MongoDB Atlas integration, Pytest suite, and Security layer. |
-| **Member 5 (Frontend Lead)** | React HSE Dashboard | Connect to REST endpoints under `http://localhost:8000/api/v1` using JWT bearer tokens. |
-| **Member 6 (QA & Deployment)** | Testing & Documentation | Run `pytest backend/tests` and deploy via `docker-compose up --build`. |
+```bash
+cd backend
+
+# 1. Activate environment and install dependencies
+.\venv\Scripts\python.exe -m pip install -r requirements.txt
+
+# 2. Run FastAPI Backend Server
+.\venv\Scripts\python.exe -m uvicorn app.main:app --host 127.0.0.1 --port 8000 --reload
+```
+
+- **Swagger Documentation**: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
+- **Health Check**: [http://127.0.0.1:8000/health](http://127.0.0.1:8000/health)
+
+---
+
+### Step B: Launch Frontend Web Portal (React + Vite)
+
+```bash
+cd dashboard
+
+# 1. Install dependencies
+npm install
+
+# 2. Start Vite Development Server
+npm run dev
+```
+
+- **Web Application Portal**: [http://localhost:5173](http://localhost:5173)
+
+---
+
+## 4. Default Demo Accounts
+
+| Role | Username / Email | Password | Access Level |
+| :--- | :--- | :--- | :--- |
+| **Safety Officer** | `testuser` / `test@example.com` | `Test@12345` | Review & analyze reports, assign corrective actions, manage status lifecycles |
+| **Administrator** | `admin` / `admin@oil.in` | `password123` | Full admin privileges, user directory management, report deletion |
 
 ---
 
 ## 5. Automated Testing
 
-Run the automated Pytest test suite:
+### Run Backend Tests (`pytest`)
 ```bash
-pytest backend/tests -v
+cd backend
+.\venv\Scripts\python.exe -m pytest -v
 ```
-All 9 core integration test suites covering Authentication, Safety Report Lifecycle, AI/NLP Analysis Pipeline, and HSE Dashboard Aggregations pass cleanly.
+
+### Run Pattern Analysis Tests (`unittest`)
+```bash
+cd pattern_analysis
+..\backend\venv\Scripts\python.exe test_analyzer.py
+```
+
+### Run Frontend Production Build (`tsc -b && vite build`)
+```bash
+cd dashboard
+npm run build
+```
+
+---
+
+## 6. Web Application Portal Routes
+
+- `/login` — User authentication portal
+- `/register` — HSE personnel registration portal
+- `/dashboard` — Real-time OIL HSE intelligence dashboard & trends
+- `/reports` — Filterable safety reports directory with pagination
+- `/reports/new` — Report submission form for Unsafe Act, Unsafe Condition, or Near Miss
+- `/reports/:id` — Report detail view with status lifecycle controls & corrective actions
+- `/analysis/:id` — AI/NLP model diagnostics, evidence extraction & confidence scores
+- `/rules` — Official Life-Saving Rules directory (Member 2 mapping)
+- `/patterns` — Incident pattern analysis & SIF trend insights (Member 3 mapping)
+- `/actions` — Corrective action item tracker across all sites
+- `/users` — Registered HSE personnel directory
+- `/profile` — User profile & role privileges checklist
+- `/settings` — AI engine mode status & system health diagnostics

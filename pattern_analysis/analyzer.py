@@ -69,7 +69,7 @@ LOCATION_KEYWORDS = {
     ],
     "Offshore": [
         "offshore",
-        "platform",
+        "offshore platform",
         "rig",
     ],
     "Road": [

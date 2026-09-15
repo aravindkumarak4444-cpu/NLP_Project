@@ -1,6 +1,6 @@
 """Pattern analysis package for SIF precursor detection."""
 
-from .analyser import (
+from .analyzer import (
     init_db,
     analyse_report,
     analyse_and_store_report,
