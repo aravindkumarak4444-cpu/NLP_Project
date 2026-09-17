@@ -111,6 +111,9 @@ class TextPreprocessor:
             "completed gas testing", "gas testing completed", "gas testing was completed",
             "used required ppe", "wore ppe", "used ppe", "ppe was provided", "ppe was used",
             "fall protection used", "fall protection connected", "fall protection was used",
+            "connected the safety lanyard", "connected safety lanyard", "connected lanyard", "connected the lanyard",
+            "area was barricaded", "barricaded", "stayed outside", "stayed outside the exclusion zone",
+            "isolated and verified", "verified zero energy", "zero energy verified", "isolated power",
             "permit obtained", "permit was obtained", "permit approved", "authorization obtained",
             "isolation completed", "lockout completed", "energy isolated", "inspection completed"
         ]
@@ -125,8 +128,9 @@ class TextPreprocessor:
         # Phrases indicating unsafe act or condition
         unsafe_phrases = [
             "without gas testing", "without permit", "without ppe", "without fall protection",
-            "without harness", "without safety harness", "without isolation", "entered without", "worked without",
-            "bypassed", "overrode", "failed to", "no gas testing", "no ppe", "no permit",
+            "without harness", "without safety harness", "without lanyard", "without safety lanyard", "without connecting",
+            "without isolation", "entered without", "worked without", "stood underneath", "standing underneath",
+            "while energized", "energized cover", "bypassed", "overrode", "failed to", "no gas testing", "no ppe", "no permit",
             "unhooked", "unsecured", "exposed live"
         ]
 
@@ -136,6 +140,7 @@ class TextPreprocessor:
             "gas alarm activated", "hydrocarbon leak", "flange leak", "wire snapped",
             "load shifted", "narrowly avoided"
         ]
+
 
         detected_compliance = [p for p in compliance_phrases if p in text_lower]
         detected_prevention = [p for p in prevention_phrases if p in text_lower]

@@ -1,201 +1,201 @@
-report_id,description,sif_potential,hazard_category,risk_level,department,location
-REP-2001,Worker entered confined space vessel without gas testing prior to entry.,1,CONFINED_SPACE,CRITICAL,Operations,Processing Plant A
-REP-2002,Tripped on an extension cord in office hallway no injury reported.,0,GENERAL_SAFETY,LOW,Administration,Main Admin Office
-REP-2003,Technician working on elevated scaffold at 8 meters without fall arrest harness.,1,WORKING_AT_HEIGHT,HIGH,Maintenance,Drilling Rig 4
-REP-2004,Hot work welding performed near flammable crude storage without hot work permit or fire watch.,1,HOT_WORK,CRITICAL,Operations,Tank Farm B
-REP-2005,Spilled coffee on breakroom counter during lunch hour cleaned up immediately.,0,GENERAL_SAFETY,LOW,Services,Cafeteria
-REP-2006,Live high voltage conductor exposed in electrical substation without LOTO lockout tagout.,1,ELECTRICAL_SAFETY,CRITICAL,Electrical,Substation 3
-REP-2007,Crane sling snapped during heavy pipe lift suspended load swung overhead.,1,SUSPENDED_LOAD,HIGH,Logistics,Pipe Storage Yard
-REP-2008,Minor paper cut while printing safety documentation in office.,0,GENERAL_SAFETY,LOW,HSE,Admin Building
-REP-2009,Worker completed gas testing before entering vessel and used required PPE and oxygen monitor.,0,CONFINED_SPACE,LOW,Operations,Vessel V-102
-REP-2010,Worker did not enter confined space because gas testing was not completed.,0,CONFINED_SPACE,LOW,Operations,Separator Unit 1
-REP-2011,High pressure gas pipeline flange leaking hydrocarbon gas near compressor station.,1,PRESSURE_SYSTEMS,CRITICAL,Pipeline,Compressor Station 2
-REP-2012,Operator unhooked safety lanyard while working on open roof edge at 12 meters height.,1,WORKING_AT_HEIGHT,HIGH,Maintenance,Boiler House
-REP-2013,Loose handrail noticed on stairway leading to platform level 2.,0,WORKING_AT_HEIGHT,MEDIUM,Maintenance,Platform B
-REP-2014,Dust fell in eye due to not wearing safety goggles while sweeping workshop.,0,GENERAL_SAFETY,LOW,Workshop,Central Workshop
-REP-2015,Forklift driving at high speed in pedestrian walking zone without sounding horn.,1,GENERAL_SAFETY,HIGH,Logistics,Warehouse 1
-REP-2016,Grinding operation conducted without spark guard near gas manifold.,1,HOT_WORK,HIGH,Maintenance,Workshop 2
-REP-2017,Worker entered storage tank without breathing apparatus when H2S alarm was sounding.,1,CONFINED_SPACE,CRITICAL,Operations,Storage Tank 8
-REP-2018,Slipped on wet floor near water cooler in hallway.,0,GENERAL_SAFETY,LOW,Administration,Admin Building 1st Floor
-REP-2019,Unsecured wooden board fell from scaffold platform at 5 meters height.,1,WORKING_AT_HEIGHT,HIGH,Construction,New Rig Site
-REP-2020,Isolation valve bypassed on high pressure gas injection wellhead.,1,PRESSURE_SYSTEMS,CRITICAL,Drilling,Wellhead Site 14
-REP-2021,Electrical junction box cover missing in rain exposed area.,0,ELECTRICAL_SAFETY,MEDIUM,Electrical,Outer Perimeter
-REP-2022,Overhead crane hook safety latch broken during pipe hoisting.,1,SUSPENDED_LOAD,HIGH,Logistics,Yard 3
-REP-2023,Technician performed gas testing and confirmed 20.9% oxygen before entering vessel.,0,CONFINED_SPACE,LOW,Operations,Distillation Unit
-REP-2024,Work stopped immediately when gas detector alarm indicated 5% LEL hydrocarbon gas.,0,CONFINED_SPACE,LOW,Safety,Tank Farm A
-REP-2025,Worker used full body safety harness with double lanyard attached to anchor point.,0,WORKING_AT_HEIGHT,LOW,Maintenance,Scaffold Station 5
-REP-2026,Heavy steel beam swung wildly during crane lift due to tag line missing.,1,SUSPENDED_LOAD,HIGH,Logistics,Jetty Dock
-REP-2027,Fire extinguisher pressure gauge reading low in generator room.,0,GENERAL_SAFETY,MEDIUM,HSE,Generator Room
-REP-2028,Arc flash occurred while inserting circuit breaker without arc flash face shield.,1,ELECTRICAL_SAFETY,CRITICAL,Electrical,Main Switchgear Room
-REP-2029,Oxygen cylinder and acetylene cylinder stored together without firewall partition.,1,HOT_WORK,MEDIUM,Maintenance,Welding Shop
-REP-2030,Contractor walking directly beneath suspended crane load.,1,SUSPENDED_LOAD,HIGH,Construction,Site B
-REP-2031,Pressure relief valve stuck closed on steam header line.,1,PRESSURE_SYSTEMS,CRITICAL,Utilities,Boiler Plant
-REP-2032,Worker wearing earplugs and safety glasses during grinding operation.,0,HOT_WORK,LOW,Workshop,Maintenance Shop
-REP-2033,Gas detector calibration expired by 3 months used for tank entry test.,1,CONFINED_SPACE,HIGH,Operations,Tank 14
-REP-2034,Safety harness lanyard frayed and damaged but kept in service.,1,WORKING_AT_HEIGHT,HIGH,Maintenance,Rig 2
-REP-2035,Oil spill noticed on concrete floor in lube storage room cleaned with absorbent.,0,GENERAL_SAFETY,MEDIUM,Logistics,Lube Room
-REP-2036,Portable ladder set up on unstable muddy ground for elevated repair work.,1,WORKING_AT_HEIGHT,MEDIUM,Maintenance,Offsite Field
-REP-2037,Emergency stop button blocked by wooden pallets in compressor bay.,0,GENERAL_SAFETY,MEDIUM,Operations,Compressor Bay 1
-REP-2038,Electric cable outer sheath damaged exposing internal insulation.,0,ELECTRICAL_SAFETY,MEDIUM,Electrical,Field Pump
-REP-2039,Hydrocarbon gas detector sensor fault displayed on central control panel.,1,PRESSURE_SYSTEMS,HIGH,Control,Control Room A
-REP-2040,Scaffolding erected without toe boards or mid rails at 6 meters height.,1,WORKING_AT_HEIGHT,HIGH,Construction,Platform A
-REP-2041,Rupture disc on glycol unit weeping small leak during startup.,0,PRESSURE_SYSTEMS,MEDIUM,Operations,Glycol Unit
-REP-2042,Worker completed safety induction and donning harness prior to elevated work.,0,WORKING_AT_HEIGHT,LOW,HSE,Training Center
-REP-2043,Nitrogen purge line disconnected without purging validation inside vessel.,1,CONFINED_SPACE,CRITICAL,Operations,Reactor R-1
-REP-2044,Heavy rain caused muddy pathway near drill floor slip hazard observed.,0,GENERAL_SAFETY,LOW,Drilling,Drill Floor
-REP-2045,Suspended load left hanging unattended on crane during tea break.,1,SUSPENDED_LOAD,HIGH,Logistics,Yard A
-REP-2046,Worker bypassed LOTO valve key lock on high pressure pump inlet line.,1,PRESSURE_SYSTEMS,CRITICAL,Operations,Pump House 3
-REP-2047,Welding cable ground clamp loose causing electrical sparks on metal deck.,0,HOT_WORK,MEDIUM,Maintenance,Deck 2
-REP-2048,Emergency eye wash station flow pressure low during weekly check.,0,GENERAL_SAFETY,MEDIUM,HSE,Chemical Lab
-REP-2049,H2S gas sensor reading 15 ppm worker evacuated area safely.,0,CONFINED_SPACE,LOW,Operations,Wellhead 8
-REP-2050,Worker standing on top rung of A-frame ladder to reach overhead valve.,1,WORKING_AT_HEIGHT,MEDIUM,Maintenance,Valve Station
-REP-2051,Welder using damaged leather gloves with holes near hot torch.,0,HOT_WORK,MEDIUM,Maintenance,Fabrication Shop
-REP-2052,Manhole cover left open without warning barricade or safety cone.,1,CONFINED_SPACE,HIGH,Civil,Site Yard
-REP-2053,Worker used LOTO padlock and tag on circuit breaker prior to electrical maintenance.,0,ELECTRICAL_SAFETY,LOW,Electrical,Substation 1
-REP-2054,Flange bolt torqued under active 50 bar operating pressure.,1,PRESSURE_SYSTEMS,CRITICAL,Maintenance,Manifold 4
-REP-2055,Safety glasses fogged up while walking down metal staircase.,0,GENERAL_SAFETY,LOW,Operations,Unit 3
-REP-2056,Rigging wire rope clamped with incorrect number of U-bolts.,1,SUSPENDED_LOAD,HIGH,Logistics,Rigging Shop
-REP-2057,Diesel engine exhaust pipe glowing red near combustible rags.,1,HOT_WORK,HIGH,Operations,Generator House
-REP-2058,Chemical splash guard missing on caustic soda transfer pump.,1,GENERAL_SAFETY,HIGH,Chemical,Water Treatment Plant
-REP-2059,Worker verified zero pressure energy isolation before dismantling pipeline spool.,0,PRESSURE_SYSTEMS,LOW,Maintenance,Pipeline Yard
-REP-2060,Hydraulic hose on crane boom bulging under pressure.,1,SUSPENDED_LOAD,HIGH,Logistics,Mobile Crane 5
-REP-2061,Confined space attendant left post while two entry workers were inside tank.,1,CONFINED_SPACE,CRITICAL,Operations,Crude Tank 3
-REP-2062,Fire hose box handle broken unable to open door quickly.,0,GENERAL_SAFETY,MEDIUM,HSE,Fire Station
-REP-2063,Scaffold tag expired yesterday work continued without re-inspection.,1,WORKING_AT_HEIGHT,MEDIUM,Construction,Structure 4
-REP-2064,High voltage cable laid across muddy road run over by heavy truck.,1,ELECTRICAL_SAFETY,HIGH,Electrical,Access Road
-REP-2065,Worker inspected safety belt D-ring and lanyards before climbing tower.,0,WORKING_AT_HEIGHT,LOW,Maintenance,Flare Tower
-REP-2066,Acetylene bottle cylinder valve leaking gas at hose connection.,1,HOT_WORK,CRITICAL,Maintenance,Gas Store
-REP-2067,Worker slipped on oil patch on metal grating held handrail avoided fall.,0,WORKING_AT_HEIGHT,LOW,Operations,Platform Deck
-REP-2068,Overhead crane limit switch malfunctioned allowing block to hit boom.,1,SUSPENDED_LOAD,HIGH,Logistics,Maintenance Bay
-REP-2069,Blowout preventer hydraulic hose fitting leaking oil during pressure test.,1,PRESSURE_SYSTEMS,HIGH,Drilling,Rig 8 Floor
-REP-2070,First aid kit missing antiseptic wipes and bandages.,0,GENERAL_SAFETY,LOW,HSE,Office
-REP-2071,Uncertified rigger signaling crane operator during complex lift.,1,SUSPENDED_LOAD,HIGH,Logistics,Dock Yard
-REP-2072,Gas test permit signed by unauthorized supervisor.,1,CONFINED_SPACE,HIGH,Operations,Plant B
-REP-2073,Substation room door left unlocked with live 11kV busbars inside.,1,ELECTRICAL_SAFETY,CRITICAL,Electrical,Substation 4
-REP-2074,Worker completed safety checklist and confirmed zero toxic gas before entry.,0,CONFINED_SPACE,LOW,Operations,Separator V-301
-REP-2075,Fall arrest retractable lifeline locked up smoothly during pre-use test.,0,WORKING_AT_HEIGHT,LOW,Safety,Equipment Room
-REP-2076,Hot work carried out without continuous gas monitoring in hydrocarbon area.,1,HOT_WORK,CRITICAL,Operations,Process Unit 2
-REP-2077,Metal shavings in work boots caused minor foot discomfort.,0,GENERAL_SAFETY,LOW,Workshop,Machine Shop
-REP-2078,Piping spool dropped from forklift fork due to lack of securing strap.,1,SUSPENDED_LOAD,HIGH,Logistics,Material Yard
-REP-2079,Air receiver tank safety relief valve popping frequently at normal pressure.,0,PRESSURE_SYSTEMS,MEDIUM,Utilities,Air Plant
-REP-2080,Worker refused to start welding because gas manifold pressure was unstable.,0,HOT_WORK,LOW,Maintenance,Workshop A
-REP-2081,No safety net installed under high elevated grating replacement work.,1,WORKING_AT_HEIGHT,HIGH,Construction,Platform 3
-REP-2082,Transformer oil drain valve weeping small drops onto gravel bed.,0,ELECTRICAL_SAFETY,LOW,Electrical,Yard
-REP-2083,Worker entered crude oil sump without lifeline harness or tripod rescue system.,1,CONFINED_SPACE,CRITICAL,Operations,Sump Pit 2
-REP-2084,Trash bin overflowing with plastic wrappings near office exit.,0,GENERAL_SAFETY,LOW,Admin,Building 2
-REP-2085,Crane outrigger placed on soft soil without timber pads underneath.,1,SUSPENDED_LOAD,HIGH,Logistics,Rig Site 3
-REP-2086,Worker used insulated rubber gloves and mat during 415V electrical work.,0,ELECTRICAL_SAFETY,LOW,Electrical,Switchboard
-REP-2087,Steam valve packing leaking live steam near pedestrian walkway.,1,PRESSURE_SYSTEMS,HIGH,Utilities,Steam Field
-REP-2088,Fire watch worker armed with CO2 extinguisher stood by during grinding.,0,HOT_WORK,LOW,Maintenance,Area 4
-REP-2089,Worker climbing vertical ladder carrying heavy tool bag in hands instead of hoist.,1,WORKING_AT_HEIGHT,MEDIUM,Operations,Tower 2
-REP-2090,Portable generator frame not grounded during outdoor welding work.,1,ELECTRICAL_SAFETY,HIGH,Electrical,Field Site
-REP-2091,Inert gas purge line connected to fresh air line by mistake.,1,CONFINED_SPACE,CRITICAL,Operations,Header Line
-REP-2092,Safety helmet chin strap unfastened while walking across windy deck.,0,GENERAL_SAFETY,LOW,Offshore,Helideck
-REP-2093,Synthetic sling used across sharp steel edge without corner protectors.,1,SUSPENDED_LOAD,HIGH,Logistics,Storage Yard
-REP-2094,Corroded pipe section discovered under insulation during NDT inspection.,1,PRESSURE_SYSTEMS,HIGH,Inspection,Unit 100
-REP-2095,Worker stopped work when heavy rain made scaffolding floor slick.,0,WORKING_AT_HEIGHT,LOW,Construction,Site 1
-REP-2096,Circuit breaker tripped due to overload reset without investigating cause.,1,ELECTRICAL_SAFETY,HIGH,Electrical,Substation 2
-REP-2097,Flashback arrestor missing on fuel gas regulator torch line.,1,HOT_WORK,HIGH,Maintenance,Gas Workshop
-REP-2098,Illumination level low in underground drainage pit during maintenance.,0,CONFINED_SPACE,MEDIUM,Civil,Drainage Pit
-REP-2099,Confined space entry permit posted clearly at vessel manway entrance.,0,CONFINED_SPACE,LOW,Operations,Vessel 4
-REP-2100,Lifting lug weld cracked on heavy separator vessel prior to lift.,1,SUSPENDED_LOAD,CRITICAL,Logistics,Fabrication Yard
-REP-2101,Worker entered separator vessel without gas test or attendant.,1,CONFINED_SPACE,CRITICAL,Operations,Separator V-101
-REP-2102,Tripped on computer wire near desk no injury.,0,GENERAL_SAFETY,LOW,Administration,Office Floor 2
-REP-2103,Technician on pipe rack at 9 meters without harness.,1,WORKING_AT_HEIGHT,HIGH,Maintenance,Pipe Rack 4
-REP-2104,Hot work grinding next to diesel tank without permit.,1,HOT_WORK,CRITICAL,Operations,Fuel Depot
-REP-2105,Spilled water on floor cleaned immediately.,0,GENERAL_SAFETY,LOW,Services,Pantry
-REP-2106,Exposed busbar in sub-station panel without cover.,1,ELECTRICAL_SAFETY,CRITICAL,Electrical,Substation A
-REP-2107,Overhead load dropped when sling broke.,1,SUSPENDED_LOAD,HIGH,Logistics,Yard 1
-REP-2108,Minor paper cut from folder.,0,GENERAL_SAFETY,LOW,HSE,Office
-REP-2109,Completed gas testing before vessel entry used PPE.,0,CONFINED_SPACE,LOW,Operations,Vessel V-105
-REP-2110,Did not enter tank because gas testing failed.,0,CONFINED_SPACE,LOW,Operations,Tank 2
-REP-2111,High pressure gas leak at flange joint.,1,PRESSURE_SYSTEMS,CRITICAL,Pipeline,Line 4
-REP-2112,Working at height 14 meters unhooked lanyard.,1,WORKING_AT_HEIGHT,HIGH,Maintenance,Tower 1
-REP-2113,Loose bolt on stairway handrail.,0,WORKING_AT_HEIGHT,MEDIUM,Maintenance,Platform A
-REP-2114,Dust in eye swept floor without goggles.,0,GENERAL_SAFETY,LOW,Workshop,Shop 1
-REP-2115,Speeding forklift in pedestrian pathway.,1,GENERAL_SAFETY,HIGH,Logistics,Warehouse 2
-REP-2116,Grinding near gas line without spark shield.,1,HOT_WORK,HIGH,Maintenance,Shop 2
-REP-2117,Entered storage tank with toxic gas present.,1,CONFINED_SPACE,CRITICAL,Operations,Tank 5
-REP-2118,Slipped on wet stairs held handrail.,0,GENERAL_SAFETY,LOW,Admin,Building A
-REP-2119,Scaffold plank loose fell 4 meters.,1,WORKING_AT_HEIGHT,HIGH,Construction,Site C
-REP-2120,Bypassed pressure relief valve on wellhead.,1,PRESSURE_SYSTEMS,CRITICAL,Drilling,Wellhead 3
-REP-2121,Junction box door open outdoors.,0,ELECTRICAL_SAFETY,MEDIUM,Electrical,Yard B
-REP-2122,Crane hook latch missing during lifting.,1,SUSPENDED_LOAD,HIGH,Logistics,Yard C
-REP-2123,Gas test 20.9% oxygen verified before entering vessel.,0,CONFINED_SPACE,LOW,Operations,Vessel 2
-REP-2124,Stopped work when LEL alarm triggered.,0,CONFINED_SPACE,LOW,Safety,Tank Area
-REP-2125,Used harness with double lanyard attached to anchor point.,0,WORKING_AT_HEIGHT,LOW,Maintenance,Station 3
-REP-2126,Steel pipe swung during crane lift tag line missing.,1,SUSPENDED_LOAD,HIGH,Logistics,Dock A
-REP-2127,Fire extinguisher low pressure reading.,0,GENERAL_SAFETY,MEDIUM,HSE,Plant 1
-REP-2128,Arc flash occurred during breaker work without face shield.,1,ELECTRICAL_SAFETY,CRITICAL,Electrical,Switchgear B
-REP-2129,Gas cylinders stored together without partition.,1,HOT_WORK,MEDIUM,Maintenance,Welding Shop B
-REP-2130,Worker walked beneath suspended crane load.,1,SUSPENDED_LOAD,HIGH,Construction,Site D
-REP-2131,Pressure relief valve jammed closed on steam line.,1,PRESSURE_SYSTEMS,CRITICAL,Utilities,Boiler 2
-REP-2132,Wore safety glasses and earplugs while grinding.,0,HOT_WORK,LOW,Workshop,Shop B
-REP-2133,Gas detector calibration expired used for entry test.,1,CONFINED_SPACE,HIGH,Operations,Tank 9
-REP-2134,Safety harness lanyard torn kept in use.,1,WORKING_AT_HEIGHT,HIGH,Maintenance,Rig 3
-REP-2135,Small oil leak on floor cleaned with absorbent.,0,GENERAL_SAFETY,MEDIUM,Logistics,Lube Bay
-REP-2136,Ladder placed on muddy soft ground for repair work.,1,WORKING_AT_HEIGHT,MEDIUM,Maintenance,Field B
-REP-2137,Emergency stop button blocked by boxes.,0,GENERAL_SAFETY,MEDIUM,Operations,Compressor 2
-REP-2138,Power cable damaged exposing internal wire.,0,ELECTRICAL_SAFETY,MEDIUM,Electrical,Pump Site
-REP-2139,Gas sensor failure warning on control screen.,1,PRESSURE_SYSTEMS,HIGH,Control,Control Room B
-REP-2140,Scaffold missing mid rails at 7 meters height.,1,WORKING_AT_HEIGHT,HIGH,Construction,Platform C
-REP-2141,Glycol valve small weep leak during startup.,0,PRESSURE_SYSTEMS,MEDIUM,Operations,Glycol Line
-REP-2142,Completed safety briefing and harness check before work.,0,WORKING_AT_HEIGHT,LOW,HSE,Training Yard
-REP-2143,Nitrogen line connected without line isolation.,1,CONFINED_SPACE,CRITICAL,Operations,Reactor 2
-REP-2144,Muddy ground slip hazard on walkway.,0,GENERAL_SAFETY,LOW,Drilling,Drill Floor 2
-REP-2145,Suspended load left hanging on crane during lunch.,1,SUSPENDED_LOAD,HIGH,Logistics,Yard D
-REP-2146,Bypassed LOTO key lock on high pressure valve.,1,PRESSURE_SYSTEMS,CRITICAL,Operations,Pump House 1
-REP-2147,Welding ground clamp loose sparks generated.,0,HOT_WORK,MEDIUM,Maintenance,Deck A
-REP-2148,Emergency eye wash low water flow.,0,GENERAL_SAFETY,MEDIUM,HSE,Lab B
-REP-2149,Gas alarm sounded worker evacuated safely.,0,CONFINED_SPACE,LOW,Operations,Wellhead 2
-REP-2150,Stood on top ladder rung to reach valve.,1,WORKING_AT_HEIGHT,MEDIUM,Maintenance,Station A
-REP-2151,Torn welding gloves used near flame.,0,HOT_WORK,MEDIUM,Maintenance,Fab Shop
-REP-2152,Open drain hole without barricade.,1,CONFINED_SPACE,HIGH,Civil,Site 2
-REP-2153,Used LOTO lock and tag on breaker before repair.,0,ELECTRICAL_SAFETY,LOW,Electrical,Substation B
-REP-2154,Flange bolt tightened under 40 bar pressure.,1,PRESSURE_SYSTEMS,CRITICAL,Maintenance,Manifold 2
-REP-2155,Glasses fogged up walking on stairs.,0,GENERAL_SAFETY,LOW,Operations,Unit 1
-REP-2156,Sling clamped with insufficient U-bolts.,1,SUSPENDED_LOAD,HIGH,Logistics,Rigging Bay
-REP-2157,Exhaust pipe hot near oily rags.,1,HOT_WORK,HIGH,Operations,Gen House
-REP-2158,Chemical guard missing on pump.,1,GENERAL_SAFETY,HIGH,Chemical,Water Plant
-REP-2159,Verified zero pressure before unbolting flange.,0,PRESSURE_SYSTEMS,LOW,Maintenance,Pipe Yard B
-REP-2160,Hydraulic line on crane bulging.,1,SUSPENDED_LOAD,HIGH,Logistics,Crane 2
-REP-2161,Confined space hole watch left post while entry worker inside.,1,CONFINED_SPACE,CRITICAL,Operations,Tank 1
-REP-2162,Fire hose door handle jammed.,0,GENERAL_SAFETY,MEDIUM,HSE,Station 2
-REP-2163,Expired scaffold tag work continued.,1,WORKING_AT_HEIGHT,MEDIUM,Construction,Structure B
-REP-2164,High voltage wire run over by truck.,1,ELECTRICAL_SAFETY,HIGH,Electrical,Road A
-REP-2165,Inspected harness D-ring before climbing.,0,WORKING_AT_HEIGHT,LOW,Maintenance,Tower B
-REP-2166,Acetylene hose leaking gas at regulator.,1,HOT_WORK,CRITICAL,Maintenance,Store 1
-REP-2167,Slipped on oil held handrail avoided injury.,0,WORKING_AT_HEIGHT,LOW,Operations,Platform 1
-REP-2168,Crane block hit boom top limit switch failed.,1,SUSPENDED_LOAD,HIGH,Logistics,Bay 2
-REP-2169,BOP hydraulic line leaking oil during test.,1,PRESSURE_SYSTEMS,HIGH,Drilling,Rig 4
-REP-2170,First aid kit empty of bandages.,0,GENERAL_SAFETY,LOW,HSE,Office B
-REP-2171,Unqualified person signaling crane lift.,1,SUSPENDED_LOAD,HIGH,Logistics,Dock B
-REP-2172,Confined space permit signed by unapproved person.,1,CONFINED_SPACE,HIGH,Operations,Plant 1
-REP-2173,Substation door open live 11kV busbars exposed.,1,ELECTRICAL_SAFETY,CRITICAL,Electrical,Substation C
-REP-2174,Verified gas test clear before entry.,0,CONFINED_SPACE,LOW,Operations,Vessel 1
-REP-2175,Retractable lifeline tested OK before use.,0,WORKING_AT_HEIGHT,LOW,Safety,Store
-REP-2176,Hot work done without continuous gas test.,1,HOT_WORK,CRITICAL,Operations,Unit B
-REP-2177,Metal dust in shoe minor discomfort.,0,GENERAL_SAFETY,LOW,Workshop,Shop C
-REP-2178,Pipe dropped from forklift unstrapped.,1,SUSPENDED_LOAD,HIGH,Logistics,Yard E
-REP-2179,Relief valve popping at working pressure.,0,PRESSURE_SYSTEMS,MEDIUM,Utilities,Air Unit
-REP-2180,Stopped welding when gas pressure dropped.,0,HOT_WORK,LOW,Maintenance,Shop D
-REP-2181,No safety net under platform grating replacement.,1,WORKING_AT_HEIGHT,HIGH,Construction,Platform D
-REP-2182,Transformer oil weeping onto floor.,0,ELECTRICAL_SAFETY,LOW,Electrical,Yard C
-REP-2183,Entered sump pit without rescue tripod or harness.,1,CONFINED_SPACE,CRITICAL,Operations,Pit 1
-REP-2184,Trash bin full near emergency exit.,0,GENERAL_SAFETY,LOW,Admin,Building 1
-REP-2185,Crane outrigger set on soft ground without mats.,1,SUSPENDED_LOAD,HIGH,Logistics,Site 4
-REP-2186,Wore rubber gloves during switchboard work.,0,ELECTRICAL_SAFETY,LOW,Electrical,Switch Room
-REP-2187,Steam leaking from flange near walkway.,1,PRESSURE_SYSTEMS,HIGH,Utilities,Steam Line
-REP-2188,Fire watch with extinguisher present during grinding.,0,HOT_WORK,LOW,Maintenance,Area B
-REP-2189,Climbing ladder with heavy tools in hand.,1,WORKING_AT_HEIGHT,MEDIUM,Operations,Tower C
-REP-2190,Generator frame ungrounded during welding.,1,ELECTRICAL_SAFETY,HIGH,Electrical,Field B
-REP-2191,Nitrogen line connected to air supply line.,1,CONFINED_SPACE,CRITICAL,Operations,Header B
-REP-2192,Helmet strap unfastened on deck.,0,GENERAL_SAFETY,LOW,Offshore,Helideck B
-REP-2193,Sling sharp edge without corner protectors.,1,SUSPENDED_LOAD,HIGH,Logistics,Yard F
-REP-2194,Corroded pipe under insulation found in inspection.,1,PRESSURE_SYSTEMS,HIGH,Inspection,Unit 200
-REP-2195,Stopped work when rain made scaffold slick.,0,WORKING_AT_HEIGHT,LOW,Construction,Site E
-REP-2196,Breaker reset without finding overload cause.,1,ELECTRICAL_SAFETY,HIGH,Electrical,Substation D
-REP-2197,Flashback arrestor missing on torch line.,1,HOT_WORK,HIGH,Maintenance,Workshop C
-REP-2198,Dim light in pit during maintenance.,0,CONFINED_SPACE,MEDIUM,Civil,Pit 2
-REP-2199,Permit posted at vessel entrance.,0,CONFINED_SPACE,LOW,Operations,Vessel B
-REP-2200,Lifting lug cracked on heavy vessel before lift.,1,SUSPENDED_LOAD,CRITICAL,Logistics,Yard G
+report_id,description,report_type,location,department,hazard_category,unsafe_act,unsafe_condition,context,label,sif_potential,risk_level
+REP-2001,Worker entered confined space vessel without gas testing prior to entry.,UNSAFE_ACT,Processing Plant A,Operations,CONFINED_SPACE,UNAUTHORIZED_ENTRY,NO_GAS_TESTING,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,CRITICAL
+REP-2002,Worker completed gas testing before entering vessel and used required PPE and oxygen monitor.,SAFE_COMPLIANCE,Vessel V-102,Operations,CONFINED_SPACE,NONE,NONE,SAFE_COMPLIANCE,SIF_PRECURSOR,1,LOW
+REP-2003,Worker did not enter confined space because gas testing was not completed.,PREVENTED_EVENT,Separator Unit 1,Operations,CONFINED_SPACE,NONE,NONE,PREVENTED_EVENT,SIF_PRECURSOR,1,LOW
+REP-2004,Worker entered storage tank without breathing apparatus when H2S alarm was sounding.,UNSAFE_ACT,Storage Tank 8,Operations,CONFINED_SPACE,NO_SCBA,H2S_ATMOSPHERE,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,CRITICAL
+REP-2005,Technician performed gas testing and confirmed 20.9% oxygen before entering vessel.,SAFE_COMPLIANCE,Distillation Unit,Operations,CONFINED_SPACE,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2006,Work stopped immediately when gas detector alarm indicated 5% LEL hydrocarbon gas.,PREVENTED_EVENT,Tank Farm A,Safety,CONFINED_SPACE,NONE,GAS_DETECTED,PREVENTED_EVENT,NON_SIF_PRECURSOR,0,LOW
+REP-2007,Contractor entered nitrogen purged column without air-supplied respirator.,UNSAFE_ACT,Column C-301,Maintenance,CONFINED_SPACE,NO_RESPIRATOR,NITROGEN_PURGED,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,CRITICAL
+REP-2008,Standby attendant left entry portal unguarded while two men were inside reactor vessel.,UNSAFE_ACT,Reactor R-101,Operations,CONFINED_SPACE,UNATTENDED_ENTRY,NO_STANDBY_MAN,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,CRITICAL
+REP-2009,Confined space entry permit verified and signed by safety supervisor before work started.,SAFE_COMPLIANCE,Desalter V-204,HSE,CONFINED_SPACE,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2010,Forced air ventilation fan installed and continuous gas monitoring maintained during tank cleaning.,SAFE_COMPLIANCE,Slop Tank 4,Maintenance,CONFINED_SPACE,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2011,Worker collapsed inside mud pit due to toxic vapor accumulation without ventilation.,NEAR_MISS,Drilling Rig 2 Mud Pit,Drilling,CONFINED_SPACE,NO_VENTILATION,TOXIC_VAPOR,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,CRITICAL
+REP-2012,Technician refused vessel entry because oxygen level measured 18.5% below safe limit.,PREVENTED_EVENT,Condensate Tank,Operations,CONFINED_SPACE,NONE,LOW_OXYGEN,PREVENTED_EVENT,NON_SIF_PRECURSOR,0,LOW
+REP-2013,Entrant used non-explosion proof flashlight inside hydrocarbon storage vessel.,UNSAFE_ACT,Crude Tank 12,Maintenance,CONFINED_SPACE,NON_EX_EQUIPMENT,FLAMMABLE_ATMOSPHERE,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,HIGH
+REP-2014,Emergency rescue tripod and winch setup inspected at manhole prior to tank entry.,SAFE_COMPLIANCE,Lube Oil Tank,Safety,CONFINED_SPACE,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2015,No life line or rescue harness attached to worker inside underground pit.,UNSAFE_CONDITION,Sump Pit 5,Civil,CONFINED_SPACE,NO_HARNESS,UNPROTECTED_PIT,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,HIGH
+REP-2016,Gas detector calibrated successfully prior to shift start in confined space team.,SAFE_COMPLIANCE,Instrument Shop,HSE,CONFINED_SPACE,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2017,Entry supervisor halted work due to missing attendant sign-in log at vessel hatch.,PREVENTED_EVENT,Boiler Drum,Operations,CONFINED_SPACE,NONE,PROCEDURAL_GAP,PREVENTED_EVENT,NON_SIF_PRECURSOR,0,LOW
+REP-2018,Pipe fitter entered pressurized sphere without verifying isolation blank installed.,UNSAFE_ACT,LPG Sphere 2,Operations,CONFINED_SPACE,NO_ISOLATION,PRESSURIZED_SYSTEM,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,CRITICAL
+REP-2019,Rescue team conducted confined space drill with full SCBA gear.,SAFE_COMPLIANCE,Fire Station Yard,Fire & Safety,CONFINED_SPACE,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2020,Worker entered flare knockout drum without toxic gas monitor attached to collar.,UNSAFE_ACT,Flare KOD,Operations,CONFINED_SPACE,NO_MONITOR,TOXIC_RISK,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,HIGH
+REP-2021,Tank cleaning crew used 24V low voltage explosion-proof lighting inside vessel.,SAFE_COMPLIANCE,Naphtha Tank 6,Maintenance,CONFINED_SPACE,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2022,Worker felt dizzy inside hydrocarbon drain pit due to lack of fresh air circulation.,NEAR_MISS,Drain Pit B,Operations,CONFINED_SPACE,NO_VENTILATION,GAS_ACCUMULATION,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,CRITICAL
+REP-2023,Continuous multigas monitor recorded 20.9% O2 0 ppm H2S 0 LEL throughout shift.,SAFE_COMPLIANCE,Sphere 1,Operations,CONFINED_SPACE,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2024,Worker refused to enter sewer vault until forced extraction fan was deployed.,PREVENTED_EVENT,Industrial Drain,Civil,CONFINED_SPACE,NONE,VENTILATION_NEEDED,PREVENTED_EVENT,NON_SIF_PRECURSOR,0,LOW
+REP-2025,Atmospheric testing omitted before sending maintenance crew into heater firebox.,UNSAFE_ACT,Heater H-101,Maintenance,CONFINED_SPACE,NO_TESTING,HAZARDOUS_ATMOSPHERE,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,CRITICAL
+REP-2026,Confined space warning sign posted at vessel entrance to prevent unauthorized access.,SAFE_COMPLIANCE,Distillation Column,Safety,CONFINED_SPACE,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2027,Standby attendant maintained visual and radio contact with entrant every 5 minutes.,SAFE_COMPLIANCE,Vessel V-301,Operations,CONFINED_SPACE,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2028,Unvented gas hose left inside closed vessel overnight creating ignition hazard.,UNSAFE_CONDITION,Reactor R-202,Maintenance,CONFINED_SPACE,LEFT_HOSE,GAS_LEAK_RISK,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,HIGH
+REP-2029,Worker disconnected lifeline inside vessel to reach far wall without backup rescue line.,UNSAFE_ACT,Tank 14,Maintenance,CONFINED_SPACE,UNHOOKED_LIFELINE,UNPROTECTED_RESCUE,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,HIGH
+REP-2030,Gas testing log updated hourly and displayed at manhole structure.,SAFE_COMPLIANCE,Unit 4 Separator,Operations,CONFINED_SPACE,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2031,Technician working on elevated scaffold at 8 meters without fall arrest harness.,UNSAFE_ACT,Drilling Rig 4,Maintenance,WORKING_AT_HEIGHT,NO_HARNESS,ELEVATED_SCAFFOLD,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,HIGH
+REP-2032,Operator unhooked safety lanyard while working on open roof edge at 12 meters height.,UNSAFE_ACT,Boiler House,Maintenance,WORKING_AT_HEIGHT,UNHOOKED_LANYARD,OPEN_ROOF_EDGE,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,CRITICAL
+REP-2033,Worker used full body safety harness with double lanyard attached to anchor point.,SAFE_COMPLIANCE,Scaffold Station 5,Maintenance,WORKING_AT_HEIGHT,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2034,Unsecured wooden board fell from scaffold platform at 5 meters height.,UNSAFE_CONDITION,New Rig Site,Construction,WORKING_AT_HEIGHT,UNSECURED_BOARD,DROPPED_OBJECT_RISK,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,HIGH
+REP-2035,Loose handrail noticed on stairway leading to platform level 2.,UNSAFE_CONDITION,Platform B,Maintenance,WORKING_AT_HEIGHT,NONE,LOOSE_HANDRAIL,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,HIGH
+REP-2036,Painter stood on top railing of scissor lift at 6 meters to reach ceiling beam.,UNSAFE_ACT,Workshop 1,Maintenance,WORKING_AT_HEIGHT,STANDING_ON_RAILING,SCISSOR_LIFT_MISUSE,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,CRITICAL
+REP-2037,Scaffolding tag inspected and verified green safe for use tag before climbing.,SAFE_COMPLIANCE,Flare Structure,Safety,WORKING_AT_HEIGHT,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2038,Technician connected safety lanyard before starting maintenance work at height.,SAFE_COMPLIANCE,Piperack Level 3,Maintenance,WORKING_AT_HEIGHT,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2039,Scaffolding toe boards and double guardrails installed properly on work platform.,SAFE_COMPLIANCE,Unit 2 Platform,Civil,WORKING_AT_HEIGHT,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2040,Rigger slipped on oily grating at 15 meters platform and was saved by fall arrest lanyard.,NEAR_MISS,Offshore Platform A,Operations,WORKING_AT_HEIGHT,SLIP_HAZARD,OILY_GRATING,NEAR_MISS,SIF_PRECURSOR,1,CRITICAL
+REP-2041,Worker did not climb uninspected scaffold red tagged incomplete structure.,PREVENTED_EVENT,Storage Area 2,Safety,WORKING_AT_HEIGHT,NONE,RED_TAGGED_SCAFFOLD,PREVENTED_EVENT,NON_SIF_PRECURSOR,0,LOW
+REP-2042,Scaffold erected over open water without life buoys or net protection.,UNSAFE_CONDITION,Jetty Platform 4,Civil,WORKING_AT_HEIGHT,NO_NET,OVER_WATER_HEIGHT,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,HIGH
+REP-2043,Worker carrying heavy toolbox with both hands while climbing vertical ladder.,UNSAFE_ACT,Silow Tower 2,Maintenance,WORKING_AT_HEIGHT,NO_THREE_POINT_CONTACT,LADDER_CLIMB,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,HIGH
+REP-2044,Self-retracting lifeline SLR tested and inspected prior to derrick work.,SAFE_COMPLIANCE,Derrick Rig 1,Drilling,WORKING_AT_HEIGHT,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2045,Missing floor grating creating 10 meter open drop hazard without barricade.,UNSAFE_CONDITION,Compressor House Deck,Maintenance,WORKING_AT_HEIGHT,NO_BARRICADE,OPEN_FLOOR_DROP,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,CRITICAL
+REP-2046,Safety net installed under elevated piperack construction zone.,SAFE_COMPLIANCE,Piperack East,Construction,WORKING_AT_HEIGHT,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2047,Worker climbed wooden ladder placed on uneven muddy ground without tying off top.,UNSAFE_ACT,Pipeline Trench 7,Civil,WORKING_AT_HEIGHT,UNSECURED_LADDER,UNEVEN_GROUND,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,HIGH
+REP-2048,Tool lanyard used for all hand tools while working on elevated grating.,SAFE_COMPLIANCE,Structure B Level 4,Maintenance,WORKING_AT_HEIGHT,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2049,Heavy wrench dropped from 14 meters elevation narrowly missing worker below.,NEAR_MISS,Drilling Derrick,Drilling,WORKING_AT_HEIGHT,DROPPED_TOOL,NO_DROPPED_OBJECT_PREVENTION,NEAR_MISS,SIF_PRECURSOR,1,CRITICAL
+REP-2050,Work at height permit authorized for roof repair with full anchor tie-off.,SAFE_COMPLIANCE,Admin Roof,Safety,WORKING_AT_HEIGHT,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2051,Manbasket attached to crane without safety latch or secondary sling tie-off.,UNSAFE_CONDITION,Offshore Berth,Operations,WORKING_AT_HEIGHT,IMPROPER_RIGGING,MANBASKET_HAZARD,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,CRITICAL
+REP-2052,Supervisor stopped worker from climbing pole without safety harness.,PREVENTED_EVENT,Substation Pole 3,Electrical,WORKING_AT_HEIGHT,NONE,NO_HARNESS_ATTEMPT,PREVENTED_EVENT,NON_SIF_PRECURSOR,0,LOW
+REP-2053,Worn and frayed safety lanyard D-ring discovered during pre-use inspection.,UNSAFE_CONDITION,Tool Room,HSE,WORKING_AT_HEIGHT,NONE,DAMAGED_EQUIPMENT,SAFE_COMPLIANCE,SIF_PRECURSOR,1,HIGH
+REP-2054,Worker detached harness to walk across un-decked steel purlins at 10 meters.,UNSAFE_ACT,Warehouse Frame,Construction,WORKING_AT_HEIGHT,DETACHED_HARNESS,OPEN_PURLINS,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,CRITICAL
+REP-2055,Fall protection anchor point load rating certified and stamped for 22 kN.,SAFE_COMPLIANCE,Rig Mast,Drilling,WORKING_AT_HEIGHT,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2056,Scaffold plank cracked under weight of two workers at 6 meters elevation.,NEAR_MISS,Process Unit 3,Maintenance,WORKING_AT_HEIGHT,OVERLOADED_PLANK,DEFECTIVE_PLANK,NEAR_MISS,SIF_PRECURSOR,1,HIGH
+REP-2057,Ladder extended 1 meter above landing surface and secured at top.,SAFE_COMPLIANCE,Tank 5 Wall,Maintenance,WORKING_AT_HEIGHT,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2058,Worker worked at 14 meters without connecting the safety lanyard.,UNSAFE_ACT,Communication Tower,Telecom,WORKING_AT_HEIGHT,NO_LANYARD,HIGH_ELEVATION,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,CRITICAL
+REP-2059,Worker connected the safety lanyard before starting work at height.,SAFE_COMPLIANCE,Communication Tower,Telecom,WORKING_AT_HEIGHT,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2060,High wind speed 35 knots caused temporary suspension of all work at height.,PREVENTED_EVENT,Offshore Crane Deck,Safety,WORKING_AT_HEIGHT,NONE,HIGH_WIND,PREVENTED_EVENT,NON_SIF_PRECURSOR,0,LOW
+REP-2061,Live high voltage conductor exposed in electrical substation without LOTO lockout tagout.,UNSAFE_CONDITION,Substation 3,Electrical,ELECTRICAL_SAFETY,NO_LOTO,EXPOSED_LIVE_WIRE,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,CRITICAL
+REP-2062,Arc flash occurred while inserting circuit breaker without arc flash face shield.,UNSAFE_ACT,Main Switchgear Room,Electrical,ELECTRICAL_SAFETY,NO_PPE_ARC_FLASH,LIVE_SWITCHGEAR,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,CRITICAL
+REP-2063,Technician isolated power breaker padlocked breaker box and tagged LOTO before repair.,SAFE_COMPLIANCE,Motor Control Center 2,Electrical,ELECTRICAL_SAFETY,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2064,Electrician verified zero voltage with multimeter before touching pump motor terminals.,SAFE_COMPLIANCE,Pump House A,Electrical,ELECTRICAL_SAFETY,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2065,Worker opened 415V electrical panel with wet gloved hands during heavy rain.,UNSAFE_ACT,Outdoor Panel P-4,Maintenance,ELECTRICAL_SAFETY,WET_HANDS_ELECTRICAL,RAIN_EXPOSURE,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,CRITICAL
+REP-2066,Electrical junction box cover missing in rain exposed area.,UNSAFE_CONDITION,Outer Perimeter,Electrical,ELECTRICAL_SAFETY,NONE,MISSING_COVER,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,HIGH
+REP-2067,Technician worked on energized 11kV transformer without insulated rubber safety gloves.,UNSAFE_ACT,Main Substation,Electrical,ELECTRICAL_SAFETY,NO_INSULATED_GLOVES,HIGH_VOLTAGE,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,CRITICAL
+REP-2068,LOTO audit confirmed all 6 isolation padlocks locked and red tags signed.,SAFE_COMPLIANCE,Compressor Room,HSE,ELECTRICAL_SAFETY,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2069,Bypassed electrical interlock on high voltage cabinet to bypass tripping signal.,UNSAFE_ACT,Control Room Annex,Instruments,ELECTRICAL_SAFETY,BYPASSED_INTERLOCK,HIGH_VOLTAGE,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,CRITICAL
+REP-2070,Work did not start on generator because isolation key was missing from lockbox.,PREVENTED_EVENT,Power House,Electrical,ELECTRICAL_SAFETY,NONE,LOTO_INCOMPLETE,PREVENTED_EVENT,NON_SIF_PRECURSOR,0,LOW
+REP-2071,Damaged cable insulation exposed copper conductor near walking aisle.,UNSAFE_CONDITION,Fabrication Shop,Electrical,ELECTRICAL_SAFETY,NONE,DAMAGED_CABLE,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,HIGH
+REP-2072,Portable electrical generator grounded with copper earth rod prior to use.,SAFE_COMPLIANCE,Laydown Yard 2,Civil,ELECTRICAL_SAFETY,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2073,Operator touched ungrounded motor casing and received severe electric shock.,NEAR_MISS,Water Injection Plant,Operations,ELECTRICAL_SAFETY,UNGROUNDED_EQUIPMENT,ELECTRIC_SHOCK,NEAR_MISS,SIF_PRECURSOR,1,CRITICAL
+REP-2074,Residual current breaker RCCB tested monthly and functioned correctly.,SAFE_COMPLIANCE,Camp Mess Building,Maintenance,ELECTRICAL_SAFETY,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2075,Unauthorized personnel unlocked LOTO lock using master key without permit owner.,UNSAFE_ACT,Switchgear B,Maintenance,ELECTRICAL_SAFETY,UNAUTHORIZED_LOTO_REMOVAL,PROCEDURAL_VIOLATION,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,CRITICAL
+REP-2076,Insulated safety tools inspected and approved for live panel diagnostic work.,SAFE_COMPLIANCE,Substation 1,Electrical,ELECTRICAL_SAFETY,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2077,Water accumulated on floor inside active electrical transformer room.,UNSAFE_CONDITION,Transformer Yard,Civil,ELECTRICAL_SAFETY,NONE,WATER_NEAR_VOLTAGE,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,HIGH
+REP-2078,Electrician refused to work on panel until main breaker upstream was opened.,PREVENTED_EVENT,Desalter Substation,Electrical,ELECTRICAL_SAFETY,NONE,LIVE_PANEL,PREVENTED_EVENT,NON_SIF_PRECURSOR,0,LOW
+REP-2079,Technician removed an electrical panel cover while energized.,UNSAFE_ACT,Substation 4,Electrical,ELECTRICAL_SAFETY,ENERGIZED_COVER_REMOVAL,LIVE_VOLTAGE,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,CRITICAL
+REP-2080,Technician isolated and verified zero energy before opening the panel.,SAFE_COMPLIANCE,Substation 4,Electrical,ELECTRICAL_SAFETY,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2081,Flexible electrical conduit pulled out of gland exposing internal wires.,UNSAFE_CONDITION,Wellhead 21,Maintenance,ELECTRICAL_SAFETY,NONE,EXPOSED_WIRES,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,HIGH
+REP-2082,Lockout hardshell box used for group LOTO with 4 individual padlocks attached.,SAFE_COMPLIANCE,Boiler Room,Operations,ELECTRICAL_SAFETY,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2083,High voltage warning sign posted on transformer enclosure gate.,SAFE_COMPLIANCE,Substation Gate,Safety,ELECTRICAL_SAFETY,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2084,Worker plugged 110V grinder into 415V socket causing flash and fuse explosion.,NEAR_MISS,Workshop 3,Maintenance,ELECTRICAL_SAFETY,VOLTAGE_MISMATCH,FUSE_EXPLOSION,NEAR_MISS,SIF_PRECURSOR,1,HIGH
+REP-2085,Electrician checked phase rotation using certified digital phase meter.,SAFE_COMPLIANCE,MCC Room,Electrical,ELECTRICAL_SAFETY,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2086,Substation door latch broken allowing unauthorized public entry.,UNSAFE_CONDITION,Substation 2,Civil,ELECTRICAL_SAFETY,NONE,UNLOCKED_SUBSTATION,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,HIGH
+REP-2087,Overcurrent protection relay trip test performed successfully.,SAFE_COMPLIANCE,Power Plant,Electrical,ELECTRICAL_SAFETY,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2088,Temporary power distribution board lacked earthing pit connection.,UNSAFE_CONDITION,Rig Site 8,Electrical,ELECTRICAL_SAFETY,NO_EARTHING,UNGROUNDED_BOARD,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,HIGH
+REP-2089,Safety officer stopped contractor from using extension cord with exposed splices.,PREVENTED_EVENT,Admin Construction,Safety,ELECTRICAL_SAFETY,NONE,SPLICED_CORD,PREVENTED_EVENT,NON_SIF_PRECURSOR,0,LOW
+REP-2090,Rubber insulating mat replaced in front of main 415V switchboard.,SAFE_COMPLIANCE,Substation 1,Electrical,ELECTRICAL_SAFETY,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2091,Crane sling snapped during heavy pipe lift suspended load swung overhead.,NEAR_MISS,Pipe Storage Yard,Logistics,SUSPENDED_LOAD,OVERHEAD_SWING,SNAPPED_SLING,NEAR_MISS,SIF_PRECURSOR,1,HIGH
+REP-2092,Overhead crane hook safety latch broken during pipe hoisting.,UNSAFE_CONDITION,Yard 3,Logistics,SUSPENDED_LOAD,NONE,BROKEN_SAFETY_LATCH,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,HIGH
+REP-2093,Heavy steel beam swung wildly during crane lift due to tag line missing.,UNSAFE_ACT,Jetty Dock,Logistics,SUSPENDED_LOAD,NO_TAG_LINE,UNCONTROLLED_LOAD,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,HIGH
+REP-2094,Crane lifted a suspended load while a worker stood underneath.,UNSAFE_ACT,Material Laydown,Logistics,SUSPENDED_LOAD,STANDING_UNDER_LOAD,SUSPENDED_LOAD_HAZARD,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,CRITICAL
+REP-2095,The lifting area was barricaded and workers stayed outside the exclusion zone.,SAFE_COMPLIANCE,Material Laydown,Logistics,SUSPENDED_LOAD,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2096,Rigger verified crane load chart capacity before initiating 25-ton lift.,SAFE_COMPLIANCE,Rig Site 2,Logistics,SUSPENDED_LOAD,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2097,Webbing sling showed severe cuts and acid burns but was still used for lift.,UNSAFE_ACT,Chemical Yard,Maintenance,SUSPENDED_LOAD,DAMAGED_SLING_USE,DEFECTIVE_SLING,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,CRITICAL
+REP-2098,Lifting permit approved and critical lift plan reviewed by rig engineer.,SAFE_COMPLIANCE,Offshore Platform,Safety,SUSPENDED_LOAD,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2099,Crane operator lifted load exceeding 110% of rated safe working load capacity.,UNSAFE_ACT,Jetty Crane 1,Operations,SUSPENDED_LOAD,OVERLOADING_CRANE,EXCEEDED_SWL,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,CRITICAL
+REP-2100,Outriggers fully extended on timber mats prior to mobile crane operation.,SAFE_COMPLIANCE,Laydown Area C,Logistics,SUSPENDED_LOAD,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2101,Tag lines attached on both ends of pipe bundle to control spin during hoist.,SAFE_COMPLIANCE,Pipe Yard 2,Logistics,SUSPENDED_LOAD,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2102,Crane boom contacted overhead 33kV power line causing spark and tire blow.,NEAR_MISS,Access Road 4,Construction,SUSPENDED_LOAD,POWERLINE_CONTACT,OVERHEAD_WIRE,NEAR_MISS,SIF_PRECURSOR,1,CRITICAL
+REP-2103,Bankman signaled crane operator to stop lift when bystander walked under boom.,PREVENTED_EVENT,Storage Yard,Safety,SUSPENDED_LOAD,NONE,BYSTANDER_IN_ZONE,PREVENTED_EVENT,NON_SIF_PRECURSOR,0,LOW
+REP-2104,Shackle pin missing safety cotter key during heavy generator positioning.,UNSAFE_CONDITION,Generator Station,Maintenance,SUSPENDED_LOAD,MISSING_COTTER_PIN,UNSECURED_SHACKLE,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,HIGH
+REP-2105,Crane anti-two-block limit switch tested and functional before shift.,SAFE_COMPLIANCE,Crawler Crane 3,Logistics,SUSPENDED_LOAD,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2106,Container dropped 3 meters when hoist brake slipped during tandem lift.,NEAR_MISS,Port Terminal,Logistics,SUSPENDED_LOAD,BRAKE_SLIP,DROPPED_CONTAINER,NEAR_MISS,SIF_PRECURSOR,1,CRITICAL
+REP-2107,Red warning tape and safety cones placed around lifting radius.,SAFE_COMPLIANCE,Unit 1 Laydown,Safety,SUSPENDED_LOAD,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2108,Rigger stood directly under 5-ton valve assembly while guiding into place.,UNSAFE_ACT,Manifold Area,Maintenance,SUSPENDED_LOAD,STANDING_UNDER_VALVE,SUSPENDED_VALVE,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,CRITICAL
+REP-2109,Lift halted due to sudden gusting wind exceeding crane safe operating limit.,PREVENTED_EVENT,Jacket Structure,Safety,SUSPENDED_LOAD,NONE,WIND_GUSTS,PREVENTED_EVENT,NON_SIF_PRECURSOR,0,LOW
+REP-2110,Rigging wire rope frayed with multiple broken strands on main winch drum.,UNSAFE_CONDITION,Drilling Rig 3,Drilling,SUSPENDED_LOAD,NONE,FRAYED_ROPE,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,HIGH
+REP-2111,Certified rigger directed crane movements using standard hand signals.,SAFE_COMPLIANCE,Yard 1,Logistics,SUSPENDED_LOAD,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2112,Forklift carried unstrapped steel pipes on forks down steep ramp.,UNSAFE_ACT,Warehouse Ramp,Logistics,SUSPENDED_LOAD,UNSTRAPPED_LOAD,STEEP_RAMP,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,HIGH
+REP-2113,Overhead crane tracks inspected for alignment and structural integrity.,SAFE_COMPLIANCE,Machine Shop,Maintenance,SUSPENDED_LOAD,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2114,Crane load indicator alarm malfunctioned and failed to warn of overload.,UNSAFE_CONDITION,Mobile Crane 4,Logistics,SUSPENDED_LOAD,FAULTY_INDICATOR,OVERLOAD_RISK,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,HIGH
+REP-2115,Synthetic slings stored in dry shade cabinet away from direct sunlight.,SAFE_COMPLIANCE,Rigging Store,HSE,SUSPENDED_LOAD,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2116,Lifting beam twisted during asymmetrical dual crane lift.,NEAR_MISS,Construction Site A,Construction,SUSPENDED_LOAD,ASYMMETRICAL_LIFT,TWISTED_BEAM,NEAR_MISS,SIF_PRECURSOR,1,HIGH
+REP-2117,Safety latch on chain block hook engaged correctly prior to pull.,SAFE_COMPLIANCE,Pump Station 2,Maintenance,SUSPENDED_LOAD,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2118,Worker pulled suspended load towards body using hands instead of tag line.,UNSAFE_ACT,Deck Area,Logistics,SUSPENDED_LOAD,MANUAL_PULL,NO_TAG_LINE,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,HIGH
+REP-2119,Weight of skid verified against manifest before selecting crane size.,SAFE_COMPLIANCE,Staging Yard,Logistics,SUSPENDED_LOAD,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2120,Lifting pad eye weld cracked on vessel shell during uprighting lift.,NEAR_MISS,Fabrication Yard,Quality,SUSPENDED_LOAD,WELD_FAILURE,CRACKED_PAD_EYE,NEAR_MISS,SIF_PRECURSOR,1,CRITICAL
+REP-2121,Hot work welding performed near flammable crude storage without hot work permit or fire watch.,UNSAFE_ACT,Tank Farm B,Operations,HOT_WORK,NO_PERMIT_WELDING,FLAMMABLE_VAPOR,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,CRITICAL
+REP-2122,High pressure gas pipeline flange leaking hydrocarbon gas near compressor station.,UNSAFE_CONDITION,Compressor Station 2,Pipeline,PRESSURE_SYSTEMS,NONE,FLANGE_LEAK,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,CRITICAL
+REP-2123,Isolation valve bypassed on high pressure gas injection wellhead.,UNSAFE_ACT,Wellhead Site 14,Drilling,PRESSURE_SYSTEMS,BYPASSED_VALVE,HIGH_PRESSURE,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,CRITICAL
+REP-2124,Grinding operation conducted without spark guard near gas manifold.,UNSAFE_ACT,Workshop 2,Maintenance,HOT_WORK,NO_SPARK_GUARD,GAS_MANIFOLD_PROXIMITY,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,HIGH
+REP-2125,Oxygen cylinder and acetylene cylinder stored together without firewall partition.,UNSAFE_CONDITION,Welding Shop,Maintenance,HOT_WORK,IMPROPER_STORAGE,MIXED_CYLINDERS,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,HIGH
+REP-2126,Welder used fire blanket containment and posted dedicated fire watch with extinguisher.,SAFE_COMPLIANCE,Pipe Shop,Maintenance,HOT_WORK,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2127,Pressure relief valve PRV tested and calibrated at certified test bench.,SAFE_COMPLIANCE,Relief Shop,Maintenance,PRESSURE_SYSTEMS,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2128,Pipe fitter loosened flange bolts on live 40 bar steam line without pressure bleed.,UNSAFE_ACT,Boiler Plant,Maintenance,PRESSURE_SYSTEMS,UNBLEED_OPENING,HIGH_PRESSURE_STEAM,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,CRITICAL
+REP-2129,Hydrotest executed with safety distance barricades and pressure gauge at remote station.,SAFE_COMPLIANCE,Pipeline Loop 3,Quality,PRESSURE_SYSTEMS,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2130,Hot work permit issued after LEL measurement recorded 0.0% gas concentration.,SAFE_COMPLIANCE,Process Platform,Safety,HOT_WORK,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2131,Gas cutting hose leaked acetylene near torch handle causing flashback flame.,NEAR_MISS,Rig Workshop,Maintenance,HOT_WORK,LEAKING_HOSE,FLASHBACK,NEAR_MISS,SIF_PRECURSOR,1,CRITICAL
+REP-2132,Flashback arrestors installed on both oxygen and fuel gas regulator outlets.,SAFE_COMPLIANCE,Welding Trolley 2,Safety,HOT_WORK,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2133,Corroded piping elbow failed under operating pressure of 80 bar.,UNSAFE_CONDITION,Manifold Station 4,Integrity,PRESSURE_SYSTEMS,CORROSION_FAILURE,HIGH_PRESSURE_BURST,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,CRITICAL
+REP-2134,Welding stopped immediately when oil trace discovered near drain trench.,PREVENTED_EVENT,Unit 3 Trench,Safety,HOT_WORK,NONE,OIL_TRACE,PREVENTED_EVENT,NON_SIF_PRECURSOR,0,LOW
+REP-2135,Pressure bleed valve opened slowly into closed drain vessel per procedure.,SAFE_COMPLIANCE,Separator V-101,Operations,PRESSURE_SYSTEMS,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2136,Operator attempted hammer tightening of leaking flange while under 50 bar pressure.,UNSAFE_ACT,Injection Header,Operations,PRESSURE_SYSTEMS,HAMMERING_UNDER_PRESSURE,PRESSURIZED_FLANGE,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,CRITICAL
+REP-2137,Fire watch remained at welding site for 30 minutes after hot work completed.,SAFE_COMPLIANCE,Tank Farm C,Safety,HOT_WORK,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2138,Compressed gas cylinder moved without protective valve cap installed.,UNSAFE_ACT,Cylinder Store,Logistics,PRESSURE_SYSTEMS,NO_VALVE_CAP,CYLINDER_HAZARD,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,HIGH
+REP-2139,Flexible steam hose coupling disconnected while pressurized scalding operator.,NEAR_MISS,Utility Station 1,Operations,PRESSURE_SYSTEMS,PRESSURIZED_DISCONNECT,STEAM_RELEASE,NEAR_MISS,SIF_PRECURSOR,1,CRITICAL
+REP-2140,Ultrasonic thickness measurement verified pipe wall within safety limits.,SAFE_COMPLIANCE,Line 104,Inspection,PRESSURE_SYSTEMS,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2141,Hot work stopped due to gas odor reported near sewer drain.,PREVENTED_EVENT,Sewer Drain 2,Safety,HOT_WORK,NONE,GAS_ODOR,PREVENTED_EVENT,NON_SIF_PRECURSOR,0,LOW
+REP-2142,Bypassed thermal relief valve on crude oil heat exchanger train.,UNSAFE_ACT,Exchanger E-102,Maintenance,PRESSURE_SYSTEMS,BYPASSED_RELIEF_VALVE,OVERPRESSURE_RISK,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,CRITICAL
+REP-2143,Gas cylinder secured upright in trolley with safety chain.,SAFE_COMPLIANCE,Workshop 1,Maintenance,PRESSURE_SYSTEMS,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2144,Hydrotest pressure relief valve burst disc ruptured at set pressure safely.,SAFE_COMPLIANCE,Testing Skid,Quality,PRESSURE_SYSTEMS,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2145,Worker struck by flying pressure gauge needle plug during calibration failure.,NEAR_MISS,Instrument Lab,Maintenance,PRESSURE_SYSTEMS,GAUGE_FAILURE,FLYING_OBJECT,NEAR_MISS,SIF_PRECURSOR,1,HIGH
+REP-2146,Spark containment screen erected around structural welding area.,SAFE_COMPLIANCE,Module 4,Construction,HOT_WORK,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2147,Hot tapping performed on live crude line without qualified procedure certification.,UNSAFE_ACT,Main Pipeline,Pipeline,PRESSURE_SYSTEMS,UNQUALIFIED_HOT_TAP,HIGH_PRESSURE_CRUDE,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,CRITICAL
+REP-2148,Fire extinguisher pressure gauge verified in green zone before hot work.,SAFE_COMPLIANCE,Site Gate,Safety,HOT_WORK,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2149,Vessel manway cover opened under 2 bar residual pressure blowing gasket into yard.,NEAR_MISS,Desalter 1,Operations,PRESSURE_SYSTEMS,RESIDUAL_PRESSURE_OPENING,BLOWN_GASKET,NEAR_MISS,SIF_PRECURSOR,1,CRITICAL
+REP-2150,Welding machine frame grounded with copper clamp.,SAFE_COMPLIANCE,Maintenance Shed,Electrical,HOT_WORK,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2151,Forklift driving at high speed in pedestrian walking zone without sounding horn.,UNSAFE_ACT,Warehouse 1,Logistics,GENERAL_SAFETY,SPEEDING_FORKLIFT,PEDESTRIAN_ZONE,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,HIGH
+REP-2152,Tripped on an extension cord in office hallway no injury reported.,UNSAFE_CONDITION,Main Admin Office,Administration,GENERAL_SAFETY,NONE,CORD_TRIP_HAZARD,UNSAFE_BEHAVIOR,NON_SIF_PRECURSOR,0,LOW
+REP-2153,Spilled coffee on breakroom counter during lunch hour cleaned up immediately.,SAFE_COMPLIANCE,Cafeteria,Services,GENERAL_SAFETY,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2154,Minor paper cut while printing safety documentation in office.,UNSAFE_ACT,Admin Building,HSE,GENERAL_SAFETY,NONE,PAPER_CUT,UNSAFE_BEHAVIOR,NON_SIF_PRECURSOR,0,LOW
+REP-2155,Dust fell in eye due to not wearing safety goggles while sweeping workshop.,UNSAFE_ACT,Central Workshop,Workshop,GENERAL_SAFETY,NO_GOGGLES,DUST_EXPOSURE,UNSAFE_BEHAVIOR,NON_SIF_PRECURSOR,0,LOW
+REP-2156,Slipped on wet floor near water cooler in hallway.,UNSAFE_CONDITION,Admin Building 1st Floor,Administration,GENERAL_SAFETY,NONE,WET_FLOOR,UNSAFE_BEHAVIOR,NON_SIF_PRECURSOR,0,LOW
+REP-2157,Fire extinguisher pressure gauge reading low in generator room.,UNSAFE_CONDITION,Generator Room,HSE,GENERAL_SAFETY,NONE,LOW_PRESSURE_EXTINGUISHER,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,HIGH
+REP-2158,Excavation 2 meters deep dug without shoring or sloping collapses near worker.,NEAR_MISS,Pipeline Trench 4,Civil,GENERAL_SAFETY,NO_SHORING,TRENCH_COLLAPSE,NEAR_MISS,SIF_PRECURSOR,1,CRITICAL
+REP-2159,Trench excavation slope inspected and soil benching verified before entry.,SAFE_COMPLIANCE,Trench 2,Civil,GENERAL_SAFETY,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2160,Chemical drum leaking concentrated sulfuric acid without secondary containment.,UNSAFE_CONDITION,Chemical Store,Operations,GENERAL_SAFETY,NO_CONTAINMENT,ACID_LEAK,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,CRITICAL
+REP-2161,Eye wash station inspected and water flow tested weekly.,SAFE_COMPLIANCE,Lab 1,HSE,GENERAL_SAFETY,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2162,Worker removed machine rotating coupling guard while pump was running.,UNSAFE_ACT,Pump House B,Maintenance,GENERAL_SAFETY,REMOVED_GUARD,RUNNING_MACHINE,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,CRITICAL
+REP-2163,Machine guard inspected and remained securely installed.,SAFE_COMPLIANCE,Pump House B,Maintenance,GENERAL_SAFETY,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2164,Heavy truck backed up in plant area without reverse alarm or banksman.,UNSAFE_ACT,Main Gate Road,Logistics,GENERAL_SAFETY,BACKING_WITHOUT_BANKSMAN,NO_REVERSE_ALARM,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,HIGH
+REP-2165,Banksman escorted heavy haulage truck safely through site road.,SAFE_COMPLIANCE,Site Road 1,Logistics,GENERAL_SAFETY,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2166,Blocked emergency escape door with wooden pallets inside warehouse.,UNSAFE_CONDITION,Warehouse 3,Logistics,GENERAL_SAFETY,BLOCKED_EXIT,FIRE_HAZARD,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,HIGH
+REP-2167,Emergency escape routes kept clear of obstacles and illuminated.,SAFE_COMPLIANCE,Admin Building,HSE,GENERAL_SAFETY,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2168,Unprotected open excavation 3 meters deep without lighting or barricade fence.,UNSAFE_CONDITION,Camp Road,Civil,GENERAL_SAFETY,NO_BARRICADE,UNLIT_PIT,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,HIGH
+REP-2169,Hard hats and safety boots worn by all personnel inside operational area.,SAFE_COMPLIANCE,Plant Entrance,Safety,GENERAL_SAFETY,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2170,Worker operated high pressure water hydro-blaster without face shield or Kevlar suit.,UNSAFE_ACT,Exchanger Yard,Maintenance,GENERAL_SAFETY,NO_HYDROBLAST_PPE,HIGH_PRESSURE_WATER,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,CRITICAL
+REP-2171,Safety goggles replaced due to minor surface scratch.,SAFE_COMPLIANCE,PPE Store,HSE,GENERAL_SAFETY,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2172,Gasoline stored in unapproved glass container inside maintenance office.,UNSAFE_CONDITION,Field Office,Maintenance,GENERAL_SAFETY,UNAPPROVED_CONTAINER,FLAMMABLE_STORAGE,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,HIGH
+REP-2173,Flammable liquids stored in designated yellow fire-rated cabinet.,SAFE_COMPLIANCE,Lab Store,Safety,GENERAL_SAFETY,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2174,Worker reached inside operating conveyor belt to clear jammed stone.,UNSAFE_ACT,Crusher Unit,Operations,GENERAL_SAFETY,REACHED_RUNNING_CONVEYOR,ENTANGLEMENT_RISK,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,CRITICAL
+REP-2175,Conveyer belt emergency pull cord tested and operational.,SAFE_COMPLIANCE,Conveyor Line 1,Maintenance,GENERAL_SAFETY,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2176,Contractor worked inside noise zone above 90 dB without ear protection.,UNSAFE_ACT,Compressor Room,Maintenance,GENERAL_SAFETY,NO_EAR_DEFENDERS,HIGH_NOISE,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,HIGH
+REP-2177,Ear plugs distributed at compressor building entrance.,SAFE_COMPLIANCE,Compressor Entrance,HSE,GENERAL_SAFETY,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2178,Scaffolding pipe dropped from truck bed during unloading striking worker helmet.,NEAR_MISS,Laydown Yard 1,Logistics,GENERAL_SAFETY,UNCONTROLLED_UNLOADING,DROPPED_PIPE,NEAR_MISS,SIF_PRECURSOR,1,HIGH
+REP-2179,Safety briefing toolbox talk conducted for all rig crew prior to shift.,SAFE_COMPLIANCE,Rig Floor,Drilling,GENERAL_SAFETY,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2180,Hydraulic winch line snapped under strain whipping past operator station.,NEAR_MISS,Drilling Floor,Drilling,GENERAL_SAFETY,LINE_SNAP,WHIPPING_CABLE,NEAR_MISS,SIF_PRECURSOR,1,CRITICAL
+REP-2181,Winch line inspected and lubricated per maintenance schedule.,SAFE_COMPLIANCE,Winch Deck,Maintenance,GENERAL_SAFETY,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2182,Chemical splash suit torn during hazardous acid transfer operation.,UNSAFE_CONDITION,Acid Plant,Operations,GENERAL_SAFETY,TORN_SUIT,ACID_HAZARD,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,CRITICAL
+REP-2183,Chemical resistant gloves worn during routine oil sampling.,SAFE_COMPLIANCE,Sampling Point 3,Operations,GENERAL_SAFETY,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2184,Heavy iron tongs slipped from drill pipe during makeup nearly crushing foot.,NEAR_MISS,Rig Floor 2,Drilling,GENERAL_SAFETY,TONG_SLIP,PINCH_POINT,NEAR_MISS,SIF_PRECURSOR,1,HIGH
+REP-2185,Steel toe boots inspected and in good condition.,SAFE_COMPLIANCE,Change House,Safety,GENERAL_SAFETY,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2186,Grinding wheel operated at RPM higher than rated wheel maximum.,UNSAFE_ACT,Machine Shop,Maintenance,GENERAL_SAFETY,EXCEEDED_RPM,BURST_WHEEL_RISK,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,HIGH
+REP-2187,Grinding wheel speed rating matched tool specification.,SAFE_COMPLIANCE,Tool Room,Maintenance,GENERAL_SAFETY,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2188,Gas leak detector battery dead during field inspection rounds.,UNSAFE_CONDITION,Metering Station,Instruments,GENERAL_SAFETY,NONE,DEAD_BATTERY_DETECTOR,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,HIGH
+REP-2189,Gas leak detector battery replaced and span test passed.,SAFE_COMPLIANCE,Instrument Shop,Instruments,GENERAL_SAFETY,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2190,Ruptured high pressure air hose whipped around shop floor until isolated.,NEAR_MISS,Pneumatic Shop,Maintenance,GENERAL_SAFETY,WHIPPING_HOSE,RUPTURED_AIR_LINE,NEAR_MISS,SIF_PRECURSOR,1,CRITICAL
+REP-2191,Whip check safety cables installed on all high pressure pneumatic hose couplings.,SAFE_COMPLIANCE,Utility Shop,Safety,GENERAL_SAFETY,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2192,Scaffold plank missing overhang clip resulting in plank tilting when stepped on.,NEAR_MISS,Unit 5 Structure,Civil,WORKING_AT_HEIGHT,TILTING_PLANK,MISSING_CLIP,NEAR_MISS,SIF_PRECURSOR,1,HIGH
+REP-2193,Scaffold platform fully planked without gaps or overhang defects.,SAFE_COMPLIANCE,Unit 5 Structure,Civil,WORKING_AT_HEIGHT,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2194,Diesel generator exhaust discharging directly into enclosed workshop.,UNSAFE_CONDITION,Field Workshop 4,Maintenance,GENERAL_SAFETY,INDOOR_EXHAUST,CARBON_MONOXIDE_HAZARD,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,CRITICAL
+REP-2195,Generator exhaust piped outdoors away from air intake vents.,SAFE_COMPLIANCE,Field Workshop 4,Maintenance,GENERAL_SAFETY,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2196,Pressure vessel relief line plugged with hardened scale deposit.,UNSAFE_CONDITION,Separator V-401,Integrity,PRESSURE_SYSTEMS,PLUGGED_RELIEF,OVERPRESSURE_HAZARD,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,CRITICAL
+REP-2197,Pressure vessel relief line inspected and cleared during turnaround.,SAFE_COMPLIANCE,Separator V-401,Maintenance,PRESSURE_SYSTEMS,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2198,Lifting hook safety latch spring missing allowing sling to slip off hook.,UNSAFE_CONDITION,Crane 5 Hook,Logistics,SUSPENDED_LOAD,SLIP_OFF_SLING,DEFECTIVE_HOOK,UNSAFE_BEHAVIOR,SIF_PRECURSOR,1,HIGH
+REP-2199,Lifting hook safety latch spring replaced and inspected.,SAFE_COMPLIANCE,Crane 5 Hook,Maintenance,SUSPENDED_LOAD,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
+REP-2200,Safety audit completed for monthly site inspection with zero critical findings.,SAFE_COMPLIANCE,Entire Facility,HSE,GENERAL_SAFETY,NONE,NONE,SAFE_COMPLIANCE,NON_SIF_PRECURSOR,0,LOW
