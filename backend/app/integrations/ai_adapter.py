@@ -437,13 +437,17 @@ class AIAdapter:
                     except Exception as e:
                         logger.warning(f"Active HuggingFace model failed to initialize: {e}")
 
-        # Priority 1: Binary pickled model (model.pkl)
+        # Priority 1: Binary pickled model (model.pkl / sif_classifier.pkl)
         pkl_candidates = [
             os.path.abspath(os.path.join(base_dir, "ai_model/model/sif_classifier.pkl")),
+            os.path.abspath(os.path.join(base_dir, "backend/ai_model/model/sif_classifier.pkl")),
+            os.path.abspath(os.path.join(os.path.dirname(__file__), "../../ai_model/model/sif_classifier.pkl")),
+            os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../ai_model/model/sif_classifier.pkl")),
             os.path.abspath(os.path.join(base_dir, "backend/ml/models/model.pkl")),
             os.path.abspath(os.path.join(base_dir, "ml/models/model.pkl")),
             os.path.abspath(settings.MODEL_PATH)
         ]
+
         for pkl_path in pkl_candidates:
             if os.path.exists(pkl_path) and os.path.getsize(pkl_path) > 0:
                 rel_path = os.path.relpath(pkl_path, base_dir).replace("\\", "/")

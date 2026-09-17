@@ -41,7 +41,8 @@ export const formatApiError = (error: any, context: 'login' | 'general' = 'gener
     if (error.code === 'ECONNABORTED' || error.message?.includes('timeout')) {
       return 'Request timed out while connecting to the FastAPI backend server.';
     }
-    return 'Cannot connect to FastAPI backend server (http://127.0.0.1:8000). Please verify backend is running on port 8000.';
+    return `Cannot connect to FastAPI backend server (${BASE_URL}). Please verify the backend is running and accessible.`;
+
   }
 
   const { status, data } = error.response;
