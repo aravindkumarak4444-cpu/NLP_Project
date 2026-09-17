@@ -103,10 +103,15 @@ app = FastAPI(
 
 # CORS Configuration
 origins = settings.FRONTEND_URL if isinstance(settings.FRONTEND_URL, list) else [str(settings.FRONTEND_URL)]
-default_origins = ["http://localhost:5173", "http://127.0.0.1:5173", "http://localhost:3000", "http://127.0.0.1:3000"]
+default_origins = [
+    "http://localhost:5173", "http://127.0.0.1:5173", "http://localhost:5174", "http://127.0.0.1:5174",
+    "http://localhost:3000", "http://127.0.0.1:3000",
+    "http://10.218.117.130:5173", "http://10.218.117.130:5174", "http://10.218.117.130:3000"
+]
 for orig in default_origins:
     if orig not in origins:
         origins.append(orig)
+
 
 app.add_middleware(
     CORSMiddleware,
